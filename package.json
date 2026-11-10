@@ -1,0 +1,15 @@
+{
+  "name": "serpent-neon-protocol",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Un Snake procédural autonome en WebGL 2 et Web Audio.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/build-standalone.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

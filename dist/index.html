@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1314">
+  <meta name="description" content="SERPENT — Neon Protocol. Le Snake réinventé : arène 3D, trois modes, trois perspectives. Une expérience intégralement procédurale.">
+  <title>SERPENT — Neon Protocol</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1314'/%3E%3Cpath d='M45 19H22a8 8 0 0 0 0 16h20a7 7 0 0 1 0 14H19' stroke='%2381ffd1' stroke-width='8' fill='none'/%3E%3Ccircle cx='43' cy='18' r='2' fill='%230b1314'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body data-state="Boot">
+  <svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-logo" viewBox="0 0 40 40"><path d="M30 9H14a6 6 0 0 0 0 12h12a5 5 0 0 1 0 10H9"/><path d="M29 6v6M34 7v4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+    <symbol id="i-flux" viewBox="0 0 24 24"><path d="M4 9h16l-4-4M20 15H4l4 4"/></symbol>
+    <symbol id="i-survival" viewBox="0 0 24 24"><path d="m12 3 9 17H3L12 3Z"/><path d="M12 9v5M12 17v.1"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4ZM17 8a6 6 0 0 1 0 8M20 5a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 4H4v4M16 4h4v4M4 16v4h4M20 16v4h-4"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="m12 3 9 5v9l-9 5-9-5V8l9-5Z M3 8l9 5 9-5M12 13v9"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m14 2-9 12h6l-1 8 9-13h-6l1-7Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5M12 17v.1"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 3h10v7a5 5 0 0 1-10 0V3ZM7 5H3v3a5 5 0 0 0 5 5M17 5h4v3a5 5 0 0 1-5 5M12 15v6M8 21h8"/></symbol>
+  </svg>
+  <div class="app-shell">
+    <header class="topbar">
+      <a href="./" class="wordmark" aria-label="Serpent, accueil"><span class="brand-icon"><svg><use href="#i-logo"/></svg></span><span>SERPENT<span class="brand-subtitle">NEON PROTOCOL</span></span></a>
+      <div class="header-center"><span class="status-dot"></span> LE CLASSIQUE. UNE AUTRE DIMENSION.</div>
+      <div class="header-actions">
+        <button class="text-button" data-action="help"><svg><use href="#i-help"/></svg><span>Comment jouer</span></button>
+        <span class="divider"></span>
+        <button class="icon-button" data-action="sound" aria-label="Couper le son" title="Son · M" aria-pressed="false"><svg><use href="#i-sound"/></svg></button>
+        <button class="icon-button" data-action="settings" aria-label="Réglages" title="Réglages"><svg><use href="#i-settings"/></svg></button>
+      </div>
+    </header>
+
+    <main class="experience">
+      <aside class="side-panel">
+        <div id="menu-content">
+          <div class="eyebrow"><span class="small-line"></span> ARCADE / ÉVOLUÉ</div>
+          <h1>L’instinct.<br> À l’état <em>pur.</em></h1>
+          <p class="intro">Une règle intemporelle.<br> Un nouveau terrain de jeu.</p>
+          <div class="section-label"><span>CHOISISSEZ VOTRE PROTOCOLE</span><span>01—03</span></div>
+          <div class="mode-list" role="group" aria-label="Mode de jeu">
+            <button class="mode-card selected" data-mode="classic" aria-pressed="true"><span class="mode-icon"><svg><use href="#i-grid"/></svg></span><span class="mode-copy"><strong>Néon <span class="tag">CLASSIQUE</span></strong><small>Le classique, transcendé.</small></span><span class="mode-radio"></span></button>
+            <button class="mode-card" data-mode="flux" aria-pressed="false"><span class="mode-icon"><svg><use href="#i-flux"/></svg></span><span class="mode-copy"><strong>Flux <span class="tag">SANS LIMITES</span></strong><small>Défiez les frontières.</small></span><span class="mode-radio"></span></button>
+            <button class="mode-card" data-mode="survival" aria-pressed="false"><span class="mode-icon"><svg><use href="#i-survival"/></svg></span><span class="mode-copy"><strong>Survie <span class="tag">ÉVOLUTIF</span></strong><small>L’arène se referme.</small></span><span class="mode-radio"></span></button>
+          </div>
+          <button class="primary-button launch" data-action="start"><span>Entrer dans l’arène</span><svg><use href="#i-arrow"/></svg></button>
+          <div class="launch-hint">OU APPUYEZ SUR <kbd>ENTRÉE</kbd></div>
+          <div class="personal-best"><svg><use href="#i-trophy"/></svg><span>Votre record <strong id="menu-best">0000</strong></span><span class="local-tag">LOCAL</span></div>
+        </div>
+
+        <div id="session-content" hidden>
+          <div class="eyebrow"><span class="small-line"></span> SESSION ACTIVE</div>
+          <div class="session-title"><h1 id="session-mode">Néon</h1><span class="tag" id="session-code">01</span></div>
+          <div class="score-block"><span class="section-label">SCORE</span><strong id="score">0000</strong><span id="combo" class="combo">MULTIPLICATEUR ×1</span></div>
+          <div class="session-stats"><div><span>NOYAUX</span><strong id="foods">00</strong></div><div><span>TEMPS</span><strong id="elapsed">00:00</strong></div></div>
+          <div class="boost-block"><div class="section-label"><span><svg><use href="#i-bolt"/></svg> RÉSERVE DE BOOST</span><strong id="energy-value">100%</strong></div><div class="energy-track"><div id="energy-fill"></div></div><p>Maintenez <kbd>ESPACE</kbd> · Points ×2</p></div>
+          <div class="live-info"><span class="status-dot"></span><span id="live-info">PROTOCOLE STABLE</span></div>
+          <p class="session-description" id="session-description"></p>
+          <div class="session-actions"><button class="secondary-button" data-action="pause"><svg><use href="#i-pause"/></svg> Pause <kbd>ÉCHAP</kbd></button><button class="text-button menu-back" data-action="menu">Quitter la session <span>↗</span></button></div>
+          <div class="personal-best"><svg><use href="#i-trophy"/></svg><span>Votre record <strong id="session-best">0000</strong></span></div>
+        </div>
+      </aside>
+
+      <section class="arena" aria-label="Arène de jeu">
+        <div class="arena-topbar"><div><span class="status-dot"></span><span id="arena-status">DÉMO EN TEMPS RÉEL</span></div><span id="arena-coordinate">SECTEUR 07 / 24 × 24</span></div>
+        <canvas id="game-canvas" aria-label="Snake en trois dimensions. Utilisez les flèches ou ZQSD pour diriger le serpent." tabindex="0"></canvas>
+        <div class="arena-grid-label top-left">N / 00</div><div class="arena-grid-label bottom-right">S / 24</div>
+        <div class="arena-caption" id="arena-caption"><span class="caption-cross">+</span><div><strong>Suivez votre instinct.</strong><small>Absorbez. Grandissez. Recommencez.</small></div></div>
+        <div class="camera-toolbar"><div class="camera-switch" role="group" aria-label="Caméra"><button class="active" data-camera="isometric" aria-pressed="true" title="Vue isométrique">ISO</button><button data-camera="top" aria-pressed="false" title="Vue tactique">2D</button><button data-camera="chase" aria-pressed="false" title="Caméra poursuite">3D</button></div><button class="icon-button" data-action="fullscreen" title="Plein écran" aria-label="Plein écran"><svg><use href="#i-expand"/></svg></button></div>
+        <div id="countdown" class="countdown" hidden aria-live="polite"><span>CONNEXION À L’ARÈNE</span><strong>3</strong></div>
+        <div id="toast" class="toast" role="status" hidden></div>
+        <div id="score-popup" class="score-popup" aria-hidden="true"></div>
+        <div id="mini-map" class="mini-map" hidden><span>RADAR / N ↑</span><canvas width="112" height="112" aria-label="Carte de l’arène : serpent menthe, noyau ambre, obstacles rouges."></canvas></div>
+        <div id="state-overlay" class="state-overlay" hidden>
+          <div class="state-card">
+            <span class="eyebrow" id="overlay-eyebrow">SIGNAL SUSPENDU</span>
+            <h2 id="overlay-title">On reprend ?</h2>
+            <p id="overlay-message">L’arène vous attend.</p>
+            <div id="result-stats" class="result-stats" hidden><div><span>SCORE FINAL</span><strong id="final-score">0000</strong></div><div><span>RECORD</span><strong id="final-best">0000</strong></div></div>
+            <div id="new-record" class="new-record" hidden>↗ NOUVEAU RECORD PERSONNEL</div>
+            <button class="primary-button" id="overlay-primary" data-action="resume">Reprendre <svg><use href="#i-arrow"/></svg></button>
+            <button class="secondary-button" data-action="menu">Changer de protocole</button>
+          </div>
+        </div>
+        <div class="touch-controls" id="touch-controls"><div class="dpad"><button data-direction="up" aria-label="Haut">↑</button><button data-direction="left" aria-label="Gauche">←</button><button data-direction="down" aria-label="Bas">↓</button><button data-direction="right" aria-label="Droite">→</button></div><button class="touch-boost" data-boost aria-label="Maintenir pour accélérer"><svg><use href="#i-bolt"/></svg>BOOST</button></div>
+      </section>
+    </main>
+
+    <footer class="bottom-bar"><div class="control-guide"><span><span class="key-group"><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></span> <span id="direction-hint">SE DIRIGER</span></span><span><kbd>ESPACE</kbd> BOOST</span><span><kbd>C</kbd> CAMÉRA</span><span><kbd>ÉCHAP</kbd> PAUSE</span></div><div class="performance"><span class="status-dot"></span><span id="fps">60</span> FPS<span class="footer-divider">/</span><span>WEBGL 2</span></div></footer>
+    <div class="page-bottom"><span>UN JEU DE RÉFLEXES. UNE QUESTION DE FLOW.</span><span>100% PROCÉDURAL <span class="tiny-diamond">◇</span> V.1.0</span></div>
+  </div>
+
+  <dialog id="settings-dialog" aria-labelledby="settings-title"><div class="dialog-header"><div><span class="eyebrow">VOTRE EXPÉRIENCE</span><h2 id="settings-title">Réglages</h2></div><button class="icon-button" data-close aria-label="Fermer"><svg><use href="#i-close"/></svg></button></div><div class="settings-body">
+    <label class="setting-row volume-row" for="volume"><span><strong>Volume général</strong><small>Musique et effets synthétisés en direct</small></span><output id="volume-output">45%</output><input type="range" id="volume" min="0" max="100" value="45"></label>
+    <label class="setting-row" for="music"><span><strong>Bande-son</strong><small>Séquence électronique générative</small></span><input type="checkbox" id="music" role="switch" checked></label>
+    <label class="setting-row" for="effects"><span><strong>Effets sonores</strong><small>Noyaux, portails et collisions</small></span><input type="checkbox" id="effects" role="switch" checked></label>
+    <label class="setting-row" for="quality"><span><strong>Qualité graphique</strong><small>Résolution et diffusion lumineuse</small></span><select id="quality"><option value="high">Ultra</option><option value="balanced">Équilibrée</option></select></label>
+    <label class="setting-row" for="reducedMotion"><span><strong>Mouvements réduits</strong><small>Sans secousses ni effets d’ambiance</small></span><input type="checkbox" id="reducedMotion" role="switch"></label>
+    <p class="settings-note">Vos réglages et records sont sauvegardés sur cet appareil.</p>
+  </div><button class="primary-button" data-close>C’est parti <svg><use href="#i-arrow"/></svg></button></dialog>
+
+  <dialog id="help-dialog" aria-labelledby="help-title"><div class="dialog-header"><div><span class="eyebrow">LA RÈGLE EST SIMPLE</span><h2 id="help-title">Gardez le cap.</h2></div><button class="icon-button" data-close aria-label="Fermer"><svg><use href="#i-close"/></svg></button></div>
+    <div class="help-intro"><span class="food-symbol">◇</span><p>Attrapez les noyaux ambrés pour grandir et marquer des points. Évitez votre corps, les murs et les obstacles.</p></div>
+    <div class="help-controls"><div><span>Direction</span><strong>Flèches · ZQSD · WASD</strong></div><div><span>Boost / points ×2</span><strong>Espace ou Maj (maintenir)</strong></div><div><span>Caméra / pause / son</span><strong>C / Échap / M</strong></div><div><span>Tactile</span><strong>Glisser ou utiliser les flèches</strong></div><div><span>Manette</span><strong>Stick / A : boost / Y : caméra</strong></div></div>
+    <div class="help-tip"><strong>Enchaînez pour multiplier.</strong><p>Un noyau en moins de 6 secondes augmente le combo, jusqu’à ×5. Le boost consomme une réserve qui se recharge automatiquement.</p></div>
+    <div class="help-tip"><strong>Trois façons de voir l’arène.</strong><p>ISO et 2D : directions de la grille. En poursuite 3D, gauche et droite font tourner le serpent par rapport à sa trajectoire ; haut et bas ne changent pas le cap.</p></div>
+    <div class="help-tip"><strong>Flux & Survie.</strong><p>Flux : les bords se rejoignent ; deux portails apparaissent tous les 3 noyaux et le tempo accélère périodiquement. Survie : les cases rouges clignotent avant de devenir des obstacles.</p></div>
+    <button class="primary-button" data-close>Compris <svg><use href="#i-arrow"/></svg></button>
+  </dialog>
+  <div id="fatal-error" class="fatal-error" hidden role="alert"><h2>Le signal est interrompu.</h2><p></p><button class="primary-button" onclick="location.reload()">Recharger</button></div>
+  <noscript><div class="fatal-error"><h2>Activez JavaScript pour jouer.</h2><p>SERPENT utilise WebGL 2 et Web Audio, directement dans votre navigateur.</p></div></noscript>
+</body>
+</html>

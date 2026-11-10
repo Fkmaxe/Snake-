@@ -1,0 +1,1509 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1314">
+  <meta name="description" content="SERPENT — Neon Protocol. Le Snake réinventé : arène 3D, trois modes, trois perspectives. Une expérience intégralement procédurale.">
+  <title>SERPENT — Neon Protocol</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1314'/%3E%3Cpath d='M45 19H22a8 8 0 0 0 0 16h20a7 7 0 0 1 0 14H19' stroke='%2381ffd1' stroke-width='8' fill='none'/%3E%3Ccircle cx='43' cy='18' r='2' fill='%230b1314'/%3E%3C/svg%3E">
+  <style>
+:root{color-scheme:dark;--bg:#0b1314;--panel:#0e1819;--mint:#81ffd1;--mint-dim:#3c7866;--text:#e9f3ef;--muted:#849591;--line:#22312e;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace;--sans:"Helvetica Neue",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg)}body{color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button{color:inherit}button:disabled{cursor:default;opacity:.5}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,canvas:focus-visible{outline:2px solid var(--mint);outline-offset:5px}button{border:0}button svg{pointer-events:none}svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.svg-library{position:absolute;width:0;height:0;overflow:hidden}[hidden]{display:none!important}a{color:inherit}.app-shell{max-width:1680px;margin:0 auto;padding:0 5.1vw} .topbar{height:111px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:20px}.wordmark{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:24px;font-weight:800;letter-spacing:3.2px;line-height:1}.brand-icon{width:44px;height:44px;background:var(--mint);color:#0d2820;border-radius:11px;display:grid;place-items:center}.brand-icon svg{width:35px;height:35px;stroke-width:3}.brand-subtitle{display:block;font:8px var(--mono);letter-spacing:3.2px;color:var(--muted);margin-top:8px}.header-center{font:9px var(--mono);letter-spacing:1.6px;color:#7f948b;display:flex;align-items:center;gap:10px}.status-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--mint);box-shadow:0 0 9px #81ffd144;flex-shrink:0}.header-actions{display:flex;gap:14px;align-items:center}.icon-button{width:36px;height:36px;display:grid;place-items:center;background:transparent;color:#8ba199;border-radius:5px;transition:background .15s,color .15s}.icon-button:hover{color:var(--mint);background:#81ffd10b}.icon-button[aria-pressed=true]{opacity:.45}.text-button{background:transparent;display:flex;align-items:center;justify-content:center;gap:9px;color:#9aada5;font-size:11px;padding:9px 0}.text-button:hover{color:var(--mint)}.text-button svg{width:16px;height:16px}.divider{height:22px;width:1px;background:var(--line);margin:0 3px}.experience{display:grid;grid-template-columns:320px minmax(0,1fr);gap:56px;padding:47px 0 35px;min-height:690px}.side-panel{padding:3px 0;position:relative}.eyebrow{font:9px var(--mono);letter-spacing:2px;color:var(--mint);display:flex;align-items:center;gap:9px}.small-line{width:18px;height:1px;background:var(--mint)}h1{font-size:61px;line-height:1.04;letter-spacing:-3.7px;font-weight:600;margin:26px 0 17px}h1 em{font-family:Georgia,"Times New Roman",serif;font-weight:400;color:var(--mint);letter-spacing:-3px}.intro{color:#82948d;font-size:13px;line-height:1.7;margin:0 0 35px}.section-label{font:8px var(--mono);letter-spacing:1.3px;color:#81938c;display:flex;justify-content:space-between;align-items:center;gap:10px}.section-label>span:last-child:not(:first-child){font-size:8px;letter-spacing:.5px}.mode-list{display:flex;flex-direction:column;gap:9px;margin-top:14px}.mode-card{border:1px solid #273530;background:linear-gradient(110deg,#121d1b,#101a18);border-radius:7px;display:flex;align-items:center;padding:16px 15px;text-align:left;min-height:77px;gap:13px;transition:border .2s,background .2s,transform .2s}.mode-card:hover{border-color:#557b6b;transform:translateX(3px)}.mode-card.selected{border-color:#71c5a1;background:linear-gradient(110deg,#1c332b,#172820);box-shadow:inset 0 0 25px #81ffd105}.mode-icon{display:grid;place-items:center;color:#718f80;width:29px}.mode-icon svg{width:24px;height:24px}.selected .mode-icon{color:var(--mint)}.mode-copy{flex:1}.mode-copy strong{display:flex;align-items:center;font-size:15px;font-weight:500;gap:10px}.tag{font:6.5px var(--mono);font-weight:400;letter-spacing:1px;border:1px solid #42574a;color:#98b4a1;border-radius:3px;padding:4px 5px;white-space:nowrap}.selected .tag{color:#9bdeb9;border-color:#446950}.mode-copy small{display:block;font-size:10px;color:#82968a;margin-top:7px}.mode-radio{width:12px;height:12px;border:1px solid #4c6456;border-radius:50%;flex-shrink:0}.selected .mode-radio{border-color:var(--mint);background:var(--mint);box-shadow:inset 0 0 0 3px #203e30}.primary-button{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--mint);border:1px solid var(--mint);color:#0b2920;font-size:12px;font-weight:600;border-radius:5px;min-height:51px;padding:13px 20px;width:100%;transition:background .15s,box-shadow .15s,transform .15s}.primary-button:hover{background:#a9ffdf;box-shadow:0 0 30px #81ffd118;transform:translateY(-1px)}.primary-button:active{transform:translateY(1px)}.primary-button svg{width:19px;height:19px}.launch{margin-top:23px}.launch-hint{margin-top:13px;text-align:center;font:7px var(--mono);letter-spacing:1.2px;color:#71877b;display:flex;align-items:center;justify-content:center;gap:6px}kbd{display:inline-grid;place-items:center;min-width:18px;height:19px;border:1px solid #35453d;border-bottom-width:2px;border-radius:3px;padding:2px 4px;font:8px var(--mono);color:#a6b9ab;white-space:nowrap}.launch-hint kbd{font-size:7px;height:17px}.personal-best{display:flex;align-items:center;gap:10px;padding-top:22px;margin-top:26px;border-top:1px solid var(--line);font-size:10px;color:#83988a}.personal-best svg{width:15px;height:15px}.personal-best>span{display:flex;gap:14px;align-items:center}.personal-best strong{font:12px var(--mono);color:#ccded1;letter-spacing:1px}.personal-best .local-tag{font:7px var(--mono);letter-spacing:1.1px;margin-left:auto;color:#526d5b}.arena{position:relative;isolation:isolate;min-width:0;background:#0a1213;border:1px solid #263731;border-radius:9px;overflow:hidden;min-height:610px}.arena::after{content:"";position:absolute;pointer-events:none;inset:0;box-shadow:inset 0 0 90px #0000001c;border-radius:inherit;z-index:1}#game-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;outline-offset:-5px;touch-action:none}.arena-topbar{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;z-index:2;padding:23px 25px;font:8px var(--mono);letter-spacing:1.2px;color:#708e81;pointer-events:none}.arena-topbar>div{display:flex;align-items:center;gap:8px}.arena-topbar .status-dot{width:4px;height:4px}.arena-topbar>span{font-size:7px;color:#557164;letter-spacing:1px}.arena-grid-label{position:absolute;font:7px var(--mono);color:#496458;letter-spacing:1px;pointer-events:none;z-index:2}.top-left{top:73px;left:25px}.bottom-right{bottom:93px;right:25px}.arena-caption{display:flex;align-items:center;gap:13px;position:absolute;bottom:25px;left:25px;z-index:2;pointer-events:none}.caption-cross{font-size:26px;font-weight:200;color:#5d9b7f}.arena-caption strong{font-size:11px;font-weight:400;color:#b5cdbf}.arena-caption small{font-size:8px;color:#638475;display:block;margin-top:6px}.camera-toolbar{display:flex;align-items:center;gap:9px;position:absolute;right:20px;bottom:24px;z-index:4}.camera-switch{display:flex;align-items:center;padding:4px;border:1px solid #2a3b32;border-radius:5px;background:#101d17cc;gap:3px}.camera-switch button{font:8px var(--mono);letter-spacing:1px;background:transparent;border-radius:3px;min-width:33px;padding:7px 8px;color:#7c9787;transition:background .2s}.camera-switch button.active{color:var(--mint);background:#294437}.camera-switch button:hover{color:var(--mint)}.camera-toolbar .icon-button{width:28px;height:28px}.camera-toolbar .icon-button svg{width:17px;height:17px}.bottom-bar{border-top:1px solid var(--line);padding:21px 0;display:flex;align-items:center;justify-content:space-between;gap:20px}.control-guide{display:flex;align-items:center;gap:27px;font:7px var(--mono);letter-spacing:.8px;color:#819588}.control-guide>span{display:flex;align-items:center;gap:8px}.key-group{display:flex;gap:3px}.key-group kbd{padding:0;min-width:17px;height:18px;font-size:10px}.performance{display:flex;align-items:center;gap:6px;font:8px var(--mono);color:#9ab7a2;letter-spacing:.7px}.performance>.status-dot{width:4px;height:4px;margin-right:2px}.footer-divider{color:#344d3c;margin:0 7px}.performance>span:last-child{font-size:7px;color:#688371}.page-bottom{display:flex;align-items:center;justify-content:space-between;font:6.5px var(--mono);letter-spacing:1.2px;color:#526c59;padding:8px 0 27px}.tiny-diamond{color:#94c4a2;margin:0 10px}
+/* Session UI shares the same stage, so camera changes preserve the running game. */
+.session-title{display:flex;align-items:center;justify-content:space-between;margin-top:30px}.session-title h1{margin:0;font-size:48px;letter-spacing:-2px}.session-title .tag{font-size:10px}.score-block{margin-top:32px}.score-block>strong{display:block;font:64px var(--mono);letter-spacing:-4px;margin-top:6px;color:var(--mint)}.combo{font:8px var(--mono);color:#5fa58b;letter-spacing:1.5px;display:block;margin-top:10px}.session-stats{display:flex;gap:35px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:23px 0;margin-top:28px}.session-stats>div{display:flex;flex-direction:column;gap:10px;flex:1}.session-stats span{font:8px var(--mono);color:var(--muted);letter-spacing:1.4px}.session-stats strong{font:23px var(--mono);font-weight:400;color:#cfdfd4}.boost-block{margin-top:27px}.boost-block .section-label span{display:flex;align-items:center;gap:7px}.boost-block svg{width:13px;height:13px;color:var(--mint)}.boost-block .section-label strong{font-size:8px;font-weight:400}.energy-track{height:5px;width:100%;margin-top:12px;background:#243c31;overflow:hidden;border-radius:2px}.energy-track>div{height:100%;width:100%;background:var(--mint);transform-origin:left;transition:background .2s;box-shadow:0 0 10px #81ffd133}.boost-block p{font-size:9px;color:#768d7f;margin-top:10px}.boost-block kbd{height:16px;font-size:7px}.live-info{display:flex;align-items:center;gap:7px;margin-top:27px;font:8px var(--mono);letter-spacing:1px;color:#80a591}.session-description{font-size:11px;line-height:1.7;color:#7a9182;min-height:56px}.session-actions{margin-top:21px;display:flex;flex-direction:column;gap:6px}.secondary-button{display:flex;align-items:center;justify-content:center;gap:10px;padding:13px 16px;background:#18271f;border:1px solid #32493b;border-radius:5px;width:100%;color:#bad8c4;font-size:11px;min-height:43px;transition:background .2s}.secondary-button:hover{background:#233b2c}.secondary-button svg{width:16px;height:16px}.secondary-button kbd{margin-left:auto;font-size:7px}.menu-back{font-size:9px;justify-content:space-between}.countdown{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#0a181748;z-index:5;pointer-events:none}.countdown span{font:9px var(--mono);letter-spacing:3px;color:var(--mint)}.countdown strong{font:100px var(--mono);color:var(--mint);text-shadow:0 0 50px #81ffd188;font-weight:400;line-height:1.5}.toast{position:absolute;left:50%;top:70px;transform:translateX(-50%);border:1px solid #516b4b;background:#14271ee8;padding:12px 20px;font:9px var(--mono);letter-spacing:1px;color:#d4edbd;border-radius:5px;white-space:nowrap;z-index:8;box-shadow:0 8px 30px #0003}.score-popup{position:absolute;top:45%;left:50%;z-index:4;color:#ffe0a2;font:30px var(--mono);pointer-events:none;opacity:0}.score-popup.pop{animation:score-rise .8s ease-out forwards}@keyframes score-rise{0%{opacity:0;transform:translate(-50%,10px) scale(.8)}20%{opacity:1;transform:translate(-50%,-10px) scale(1)}100%{opacity:0;transform:translate(-50%,-65px) scale(.9)}}.state-overlay{position:absolute;inset:0;display:grid;place-items:center;background:#081714b8;backdrop-filter:blur(9px);z-index:10;padding:25px}.state-card{width:min(330px,100%);text-align:center}.state-card .eyebrow{justify-content:center;font-size:8px}.state-card h2{font-size:37px;letter-spacing:-1.4px;font-weight:500;margin:20px 0 10px}.state-card>p{font-size:11px;line-height:1.7;color:#9cb6a4;margin-bottom:26px}.state-card .primary-button{justify-content:space-between}.state-card .secondary-button{margin-top:11px;background:#15271f}.result-stats{display:flex;justify-content:space-around;padding:20px 0 27px;gap:25px;border-top:1px solid #3a5342}.result-stats>div{display:flex;flex-direction:column;gap:8px}.result-stats span{font:7px var(--mono);color:#92aa9b;letter-spacing:1px}.result-stats strong{font:33px var(--mono);color:var(--mint)}.new-record{font:8px var(--mono);letter-spacing:1px;color:#ffcb80;margin-bottom:24px}.touch-controls{display:none}.arena:fullscreen{height:100vh;width:100vw;border:0;border-radius:0}.arena:fullscreen .camera-toolbar{bottom:28px}.arena:fullscreen .touch-controls{bottom:20px}.fatal-error{position:fixed;inset:0;z-index:100;background:#0b1715f5;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:35px;text-align:center}.fatal-error h2{font-size:28px;font-weight:500}.fatal-error p{font-size:14px;line-height:1.7;max-width:500px;color:#adccba}.fatal-error .primary-button{width:220px;justify-content:center;margin-top:20px}
+/* Native dialogs provide focus containment and keyboard dismissal. */
+dialog{color:var(--text);background:#101e19;border:1px solid #3f5a47;border-radius:12px;padding:29px;max-width:min(490px,calc(100vw - 30px));width:490px;max-height:calc(100dvh - 40px);box-shadow:0 35px 150px #0009}dialog::backdrop{background:#040c09ba;backdrop-filter:blur(8px)}.dialog-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}.dialog-header h2{font-size:33px;font-weight:500;letter-spacing:-1px;margin:12px 0 0}.dialog-header .eyebrow{font-size:7px;letter-spacing:1.5px}.dialog-header .icon-button{margin-top:-8px;margin-right:-9px}.setting-row{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #2b4031;padding:20px 0}.setting-row strong{font-size:12px;font-weight:500;display:block}.setting-row small{font-size:9px;color:#7e9a87;display:block;margin-top:7px;line-height:1.5}.setting-row input[type=checkbox]{appearance:none;width:34px;height:19px;border:1px solid #3d5f48;background:#25382c;border-radius:15px;position:relative;flex-shrink:0;cursor:pointer}.setting-row input[type=checkbox]::before{content:"";width:11px;height:11px;border-radius:50%;background:#8ca994;position:absolute;left:3px;top:3px;transition:transform .15s}.setting-row input[type=checkbox]:checked{background:#284e39;border-color:#669b77}.setting-row input[type=checkbox]:checked::before{background:var(--mint);transform:translateX(15px)}.volume-row{flex-wrap:wrap;gap:15px}.volume-row input{width:100%;accent-color:var(--mint);height:4px;cursor:pointer}.volume-row output{font:12px var(--mono);color:var(--mint)}.setting-row select{border:1px solid #46604c;background:#1b3023;padding:8px;border-radius:4px;color:#bedac6;font-size:10px;max-width:115px}.settings-note{font-size:9px;color:#6f8d79;text-align:center;line-height:1.5;margin:23px 0}.help-intro{display:flex;gap:17px;align-items:center;padding:5px 0 15px}.help-intro p{font-size:12px;color:#b0c9b8;line-height:1.7}.food-symbol{font-size:48px;color:#ffca80;text-shadow:0 0 20px #ffa83855}.help-controls{border-top:1px solid #304b39;border-bottom:1px solid #304b39;padding:12px 0}.help-controls>div{display:flex;justify-content:space-between;gap:20px;padding:8px 0;font-size:10px}.help-controls span{color:#7e9a88}.help-controls strong{font-weight:400;text-align:right;color:#cee8d6}.help-tip{margin:23px 0}.help-tip strong{font-size:12px;font-weight:500;color:var(--mint)}.help-tip p{font-size:10px;line-height:1.8;color:#8fae99;margin:7px 0}.touch-boost{touch-action:none}.dpad button{touch-action:none}
+@media(min-width:1600px){.experience{grid-template-columns:355px minmax(0,1fr);gap:70px;min-height:760px}.arena{min-height:670px}h1{font-size:70px}.intro{font-size:14px}.mode-card{min-height:84px}.mode-copy strong{font-size:16px}.mode-copy small{font-size:11px}.launch{min-height:56px}.mode-list{gap:11px}}
+@media(max-width:1200px){.app-shell{padding:0 4vw}.header-center{display:none}.experience{grid-template-columns:275px minmax(0,1fr);gap:30px;padding-top:32px}.topbar{height:90px}h1{font-size:54px;letter-spacing:-3px}.intro{margin-bottom:26px}.mode-card{padding:14px 12px;gap:10px;min-height:74px}.mode-copy strong{font-size:14px;gap:7px}.tag{font-size:5.5px}.mode-copy small{font-size:9px}.section-label{font-size:7px}.arena{min-height:590px}.arena-caption{bottom:74px;left:20px}.camera-toolbar{bottom:21px}.control-guide{gap:18px}.arena-topbar{padding:21px 19px}.arena-topbar>span{display:none}.personal-best{margin-top:22px;padding-top:19px}.experience{min-height:650px}}
+@media(max-width:850px){.app-shell{padding:0 24px}.experience{gap:20px;grid-template-columns:250px minmax(0,1fr)}h1{font-size:49px}.header-actions{gap:7px}.header-actions .text-button{font-size:10px}.mode-card{padding:13px 10px}.mode-icon{width:23px}.mode-copy strong{font-size:13px}.mode-copy small{font-size:8px}.tag{font-size:5px;letter-spacing:.7px}.mode-card{gap:9px}.control-guide{gap:13px;font-size:6px}.control-guide>span{gap:5px}.control-guide>span:last-child{display:none}.arena-caption strong{font-size:10px}.arena-caption small{font-size:7px}.bottom-bar{gap:8px}.performance{font-size:7px}.performance>span:last-child{display:none}.footer-divider{display:none}.arena{min-height:570px}}
+@media(max-width:680px){.app-shell{padding:0 18px}.topbar{height:77px}.wordmark{font-size:20px;gap:10px;letter-spacing:2px}.brand-icon{width:36px;height:36px;border-radius:9px}.brand-icon svg{width:29px;height:29px}.brand-subtitle{font-size:6px;letter-spacing:2.8px;margin-top:7px}.header-actions .text-button span{display:none}.header-actions .divider{display:none}.header-actions{gap:4px}.header-actions .icon-button{width:30px;height:32px}.header-actions .text-button{width:28px}.experience{display:flex;flex-direction:column;padding:26px 0 20px;gap:24px;min-height:0}.side-panel{padding:0}.eyebrow{font-size:7px;letter-spacing:1.4px}h1{font-size:46px;line-height:1.02;margin:18px 0 13px;letter-spacing:-2.5px}h1 br{display:none}h1 em{letter-spacing:-2px}.intro{font-size:11px;margin-bottom:25px}.intro br{display:none}.intro br::after{content:" "}.section-label{font-size:7px;letter-spacing:.9px}.mode-list{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.mode-card{display:flex;flex-direction:column;align-items:flex-start;padding:14px 11px;gap:12px;position:relative;min-height:108px}.mode-card:hover{transform:none}.mode-icon svg{width:21px;height:21px}.mode-copy strong{font-size:14px}.mode-copy .tag{display:none}.mode-copy small{font-size:8px;line-height:1.5;margin-top:5px}.mode-radio{position:absolute;right:11px;top:17px;width:10px;height:10px}.launch{margin-top:17px;font-size:12px;min-height:48px}.launch-hint{display:none}.personal-best{margin-top:16px;padding-top:14px;font-size:9px}.personal-best strong{font-size:11px}.personal-best svg{width:13px;height:13px}.arena{min-height:360px;height:360px;flex:none;border-radius:7px}.arena-topbar{padding:18px;font-size:7px}.arena-grid-label{display:none}.arena-caption{bottom:20px;left:18px;gap:8px}.arena-caption strong{font-size:9px}.arena-caption small{display:none}.caption-cross{font-size:21px}.camera-toolbar{right:12px;bottom:13px;gap:4px}.camera-switch button{min-width:29px;font-size:7px;padding:6px}.camera-toolbar .icon-button{width:25px}.control-guide{gap:15px;font-size:6px}.control-guide .key-group kbd{min-width:14px;height:16px;font-size:9px}.control-guide>span:nth-child(2){display:none}.bottom-bar{padding:17px 0}.page-bottom{font-size:5.5px;letter-spacing:.7px;gap:20px;padding-bottom:18px}.page-bottom>span:first-child{max-width:200px;line-height:1.8}.tiny-diamond{margin:0 4px}.toast{font-size:7px;padding:10px;top:53px;max-width:95%;white-space:normal;text-align:center}.performance{gap:4px}.performance .status-dot{width:3px;height:3px}
+body:not([data-state=Menu]):not([data-state=Boot]) .experience{padding-top:20px;gap:17px}#session-content{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:center}#session-content>.eyebrow{display:none}.session-title{margin:0;gap:10px;justify-content:flex-start}.session-title h1{font-size:29px;letter-spacing:-1px}.session-title .tag{font-size:7px}.score-block{margin:0;text-align:right;grid-column:2;grid-row:1 / span 2}.score-block .section-label{justify-content:flex-end;font-size:6px}.score-block>strong{font-size:37px;letter-spacing:-1px;margin-top:3px}.combo{font-size:6px;letter-spacing:1px;margin-top:4px}.session-stats{padding:0;border:0;margin:0;gap:20px;grid-column:1;grid-row:2}.session-stats>div{gap:5px;flex:none}.session-stats span{font-size:6px}.session-stats strong{font-size:14px}.boost-block{grid-column:1 / -1;margin-top:0}.boost-block .section-label{font-size:7px}.boost-block .section-label strong{font-size:7px}.boost-block p{display:none}.energy-track{margin-top:8px;height:3px}.session-actions{grid-column:1 / -1;flex-direction:row;margin:0;align-items:center;gap:12px}.session-actions .secondary-button{width:auto;padding:8px 11px;min-height:30px;font-size:9px}.session-actions .secondary-button kbd{display:none}.session-actions .menu-back{font-size:8px;gap:10px}.live-info,.session-description,#session-content .personal-best{display:none}body:not([data-state=Menu]):not([data-state=Boot]) .arena{height:min(57vh,490px);min-height:390px}body:not([data-state=Menu]):not([data-state=Boot]) .arena-caption{display:none}body:not([data-state=Menu]):not([data-state=Boot]) .camera-toolbar{top:10px;bottom:auto}body:not([data-state=Menu]):not([data-state=Boot]) .arena-topbar{padding:20px 14px;font-size:6px}body:not([data-state=Menu]):not([data-state=Boot]) .touch-controls{display:flex;align-items:flex-end;justify-content:space-between;position:absolute;bottom:15px;left:15px;right:15px;z-index:5;pointer-events:none}body[data-state=Paused] .touch-controls,body[data-state=GameOver] .touch-controls{display:none!important}.dpad{display:grid;grid-template-columns:repeat(3,34px);grid-template-rows:repeat(2,30px);gap:3px;pointer-events:auto}.dpad button{border:1px solid #4b7355;border-radius:4px;color:#b6e2c3;font-size:16px;background:#14281ecc}.dpad button:active{background:#3c6b4d}.dpad button:first-child{grid-column:2}.dpad button:nth-child(2){grid-column:1;grid-row:2}.dpad button:nth-child(3){grid-column:2;grid-row:2}.dpad button:nth-child(4){grid-column:3;grid-row:2}.touch-boost{display:flex;flex-direction:column;align-items:center;gap:5px;justify-content:center;width:60px;height:60px;border-radius:50%;background:#1d3a2bc9;color:var(--mint);border:1px solid #5b9472;font:6px var(--mono);letter-spacing:1px;pointer-events:auto}.touch-boost:active{background:#407a51}.touch-boost svg{width:22px;height:22px}.state-card h2{font-size:31px}.state-card>p{font-size:10px;margin-bottom:17px}.state-card .eyebrow{font-size:7px}.result-stats{padding:13px 0 19px}.result-stats strong{font-size:26px}.state-card .primary-button{min-height:43px;font-size:11px}.state-card .secondary-button{font-size:10px;min-height:39px}.new-record{font-size:7px;margin-bottom:15px}.countdown strong{font-size:80px}.countdown span{font-size:7px}}
+@media(pointer:coarse) and (min-width:681px){body[data-state=Playing] .touch-controls{display:flex;justify-content:space-between;position:absolute;bottom:20px;left:20px;right:20px;z-index:5}.dpad{display:flex;gap:5px}.dpad button{width:36px;height:36px;background:#1a3528cc;border:1px solid #416e51;border-radius:4px;color:var(--mint)}.touch-boost{background:#1b3929cc;border:1px solid #557e60;border-radius:5px;display:flex;gap:8px;align-items:center;font:8px var(--mono);padding:8px;color:var(--mint)}body[data-state=Playing] .camera-toolbar{bottom:80px}}
+@media(max-height:760px) and (min-width:900px){.topbar{height:78px}.experience{padding-top:28px;padding-bottom:25px;min-height:590px}.arena{min-height:540px}h1{font-size:52px;margin-top:20px;margin-bottom:12px}.intro{font-size:11px;margin-bottom:25px}.mode-card{min-height:66px;padding-top:12px;padding-bottom:12px}.mode-list{gap:8px}.launch{margin-top:18px;min-height:46px}.personal-best{margin-top:20px;padding-top:16px}.bottom-bar{padding:15px 0}.page-bottom{padding-bottom:15px}.score-block{margin-top:20px}.session-stats{margin-top:20px;padding:17px 0}.boost-block{margin-top:20px}.live-info{margin-top:20px}.session-actions{margin-top:13px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+body.reduced-motion *,body.reduced-motion *::before,body.reduced-motion *::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+.mini-map{position:absolute;top:66px;right:25px;z-index:3;padding:9px;background:#0b1b14d9;border:1px solid #365a42;border-radius:5px;pointer-events:none}.mini-map>span{display:block;font:6px var(--mono);letter-spacing:1.1px;color:#8cab94;margin-bottom:8px}.mini-map canvas{display:block;width:112px;height:112px;opacity:.9}@media(max-width:680px){.mini-map{top:54px;right:13px;padding:6px}.mini-map canvas{width:76px;height:76px}.mini-map>span{font-size:5px;margin-bottom:5px}}
+
+</style>
+  
+</head>
+<body data-state="Boot">
+  <svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-logo" viewBox="0 0 40 40"><path d="M30 9H14a6 6 0 0 0 0 12h12a5 5 0 0 1 0 10H9"/><path d="M29 6v6M34 7v4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+    <symbol id="i-flux" viewBox="0 0 24 24"><path d="M4 9h16l-4-4M20 15H4l4 4"/></symbol>
+    <symbol id="i-survival" viewBox="0 0 24 24"><path d="m12 3 9 17H3L12 3Z"/><path d="M12 9v5M12 17v.1"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4ZM17 8a6 6 0 0 1 0 8M20 5a10 10 0 0 1 0 14"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 4H4v4M16 4h4v4M4 16v4h4M20 16v4h-4"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="m12 3 9 5v9l-9 5-9-5V8l9-5Z M3 8l9 5 9-5M12 13v9"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="m14 2-9 12h6l-1 8 9-13h-6l1-7Z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 2-3 5M12 17v.1"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 3h10v7a5 5 0 0 1-10 0V3ZM7 5H3v3a5 5 0 0 0 5 5M17 5h4v3a5 5 0 0 1-5 5M12 15v6M8 21h8"/></symbol>
+  </svg>
+  <div class="app-shell">
+    <header class="topbar">
+      <a href="./SERPENT.html" class="wordmark" aria-label="Serpent, accueil"><span class="brand-icon"><svg><use href="#i-logo"/></svg></span><span>SERPENT<span class="brand-subtitle">NEON PROTOCOL</span></span></a>
+      <div class="header-center"><span class="status-dot"></span> LE CLASSIQUE. UNE AUTRE DIMENSION.</div>
+      <div class="header-actions">
+        <button class="text-button" data-action="help"><svg><use href="#i-help"/></svg><span>Comment jouer</span></button>
+        <span class="divider"></span>
+        <button class="icon-button" data-action="sound" aria-label="Couper le son" title="Son · M" aria-pressed="false"><svg><use href="#i-sound"/></svg></button>
+        <button class="icon-button" data-action="settings" aria-label="Réglages" title="Réglages"><svg><use href="#i-settings"/></svg></button>
+      </div>
+    </header>
+
+    <main class="experience">
+      <aside class="side-panel">
+        <div id="menu-content">
+          <div class="eyebrow"><span class="small-line"></span> ARCADE / ÉVOLUÉ</div>
+          <h1>L’instinct.<br> À l’état <em>pur.</em></h1>
+          <p class="intro">Une règle intemporelle.<br> Un nouveau terrain de jeu.</p>
+          <div class="section-label"><span>CHOISISSEZ VOTRE PROTOCOLE</span><span>01—03</span></div>
+          <div class="mode-list" role="group" aria-label="Mode de jeu">
+            <button class="mode-card selected" data-mode="classic" aria-pressed="true"><span class="mode-icon"><svg><use href="#i-grid"/></svg></span><span class="mode-copy"><strong>Néon <span class="tag">CLASSIQUE</span></strong><small>Le classique, transcendé.</small></span><span class="mode-radio"></span></button>
+            <button class="mode-card" data-mode="flux" aria-pressed="false"><span class="mode-icon"><svg><use href="#i-flux"/></svg></span><span class="mode-copy"><strong>Flux <span class="tag">SANS LIMITES</span></strong><small>Défiez les frontières.</small></span><span class="mode-radio"></span></button>
+            <button class="mode-card" data-mode="survival" aria-pressed="false"><span class="mode-icon"><svg><use href="#i-survival"/></svg></span><span class="mode-copy"><strong>Survie <span class="tag">ÉVOLUTIF</span></strong><small>L’arène se referme.</small></span><span class="mode-radio"></span></button>
+          </div>
+          <button class="primary-button launch" data-action="start"><span>Entrer dans l’arène</span><svg><use href="#i-arrow"/></svg></button>
+          <div class="launch-hint">OU APPUYEZ SUR <kbd>ENTRÉE</kbd></div>
+          <div class="personal-best"><svg><use href="#i-trophy"/></svg><span>Votre record <strong id="menu-best">0000</strong></span><span class="local-tag">LOCAL</span></div>
+        </div>
+
+        <div id="session-content" hidden>
+          <div class="eyebrow"><span class="small-line"></span> SESSION ACTIVE</div>
+          <div class="session-title"><h1 id="session-mode">Néon</h1><span class="tag" id="session-code">01</span></div>
+          <div class="score-block"><span class="section-label">SCORE</span><strong id="score">0000</strong><span id="combo" class="combo">MULTIPLICATEUR ×1</span></div>
+          <div class="session-stats"><div><span>NOYAUX</span><strong id="foods">00</strong></div><div><span>TEMPS</span><strong id="elapsed">00:00</strong></div></div>
+          <div class="boost-block"><div class="section-label"><span><svg><use href="#i-bolt"/></svg> RÉSERVE DE BOOST</span><strong id="energy-value">100%</strong></div><div class="energy-track"><div id="energy-fill"></div></div><p>Maintenez <kbd>ESPACE</kbd> · Points ×2</p></div>
+          <div class="live-info"><span class="status-dot"></span><span id="live-info">PROTOCOLE STABLE</span></div>
+          <p class="session-description" id="session-description"></p>
+          <div class="session-actions"><button class="secondary-button" data-action="pause"><svg><use href="#i-pause"/></svg> Pause <kbd>ÉCHAP</kbd></button><button class="text-button menu-back" data-action="menu">Quitter la session <span>↗</span></button></div>
+          <div class="personal-best"><svg><use href="#i-trophy"/></svg><span>Votre record <strong id="session-best">0000</strong></span></div>
+        </div>
+      </aside>
+
+      <section class="arena" aria-label="Arène de jeu">
+        <div class="arena-topbar"><div><span class="status-dot"></span><span id="arena-status">DÉMO EN TEMPS RÉEL</span></div><span id="arena-coordinate">SECTEUR 07 / 24 × 24</span></div>
+        <canvas id="game-canvas" aria-label="Snake en trois dimensions. Utilisez les flèches ou ZQSD pour diriger le serpent." tabindex="0"></canvas>
+        <div class="arena-grid-label top-left">N / 00</div><div class="arena-grid-label bottom-right">S / 24</div>
+        <div class="arena-caption" id="arena-caption"><span class="caption-cross">+</span><div><strong>Suivez votre instinct.</strong><small>Absorbez. Grandissez. Recommencez.</small></div></div>
+        <div class="camera-toolbar"><div class="camera-switch" role="group" aria-label="Caméra"><button class="active" data-camera="isometric" aria-pressed="true" title="Vue isométrique">ISO</button><button data-camera="top" aria-pressed="false" title="Vue tactique">2D</button><button data-camera="chase" aria-pressed="false" title="Caméra poursuite">3D</button></div><button class="icon-button" data-action="fullscreen" title="Plein écran" aria-label="Plein écran"><svg><use href="#i-expand"/></svg></button></div>
+        <div id="countdown" class="countdown" hidden aria-live="polite"><span>CONNEXION À L’ARÈNE</span><strong>3</strong></div>
+        <div id="toast" class="toast" role="status" hidden></div>
+        <div id="score-popup" class="score-popup" aria-hidden="true"></div>
+        <div id="mini-map" class="mini-map" hidden><span>RADAR / N ↑</span><canvas width="112" height="112" aria-label="Carte de l’arène : serpent menthe, noyau ambre, obstacles rouges."></canvas></div>
+        <div id="state-overlay" class="state-overlay" hidden>
+          <div class="state-card">
+            <span class="eyebrow" id="overlay-eyebrow">SIGNAL SUSPENDU</span>
+            <h2 id="overlay-title">On reprend ?</h2>
+            <p id="overlay-message">L’arène vous attend.</p>
+            <div id="result-stats" class="result-stats" hidden><div><span>SCORE FINAL</span><strong id="final-score">0000</strong></div><div><span>RECORD</span><strong id="final-best">0000</strong></div></div>
+            <div id="new-record" class="new-record" hidden>↗ NOUVEAU RECORD PERSONNEL</div>
+            <button class="primary-button" id="overlay-primary" data-action="resume">Reprendre <svg><use href="#i-arrow"/></svg></button>
+            <button class="secondary-button" data-action="menu">Changer de protocole</button>
+          </div>
+        </div>
+        <div class="touch-controls" id="touch-controls"><div class="dpad"><button data-direction="up" aria-label="Haut">↑</button><button data-direction="left" aria-label="Gauche">←</button><button data-direction="down" aria-label="Bas">↓</button><button data-direction="right" aria-label="Droite">→</button></div><button class="touch-boost" data-boost aria-label="Maintenir pour accélérer"><svg><use href="#i-bolt"/></svg>BOOST</button></div>
+      </section>
+    </main>
+
+    <footer class="bottom-bar"><div class="control-guide"><span><span class="key-group"><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></span> <span id="direction-hint">SE DIRIGER</span></span><span><kbd>ESPACE</kbd> BOOST</span><span><kbd>C</kbd> CAMÉRA</span><span><kbd>ÉCHAP</kbd> PAUSE</span></div><div class="performance"><span class="status-dot"></span><span id="fps">60</span> FPS<span class="footer-divider">/</span><span>WEBGL 2</span></div></footer>
+    <div class="page-bottom"><span>UN JEU DE RÉFLEXES. UNE QUESTION DE FLOW.</span><span>100% PROCÉDURAL <span class="tiny-diamond">◇</span> V.1.0</span></div>
+  </div>
+
+  <dialog id="settings-dialog" aria-labelledby="settings-title"><div class="dialog-header"><div><span class="eyebrow">VOTRE EXPÉRIENCE</span><h2 id="settings-title">Réglages</h2></div><button class="icon-button" data-close aria-label="Fermer"><svg><use href="#i-close"/></svg></button></div><div class="settings-body">
+    <label class="setting-row volume-row" for="volume"><span><strong>Volume général</strong><small>Musique et effets synthétisés en direct</small></span><output id="volume-output">45%</output><input type="range" id="volume" min="0" max="100" value="45"></label>
+    <label class="setting-row" for="music"><span><strong>Bande-son</strong><small>Séquence électronique générative</small></span><input type="checkbox" id="music" role="switch" checked></label>
+    <label class="setting-row" for="effects"><span><strong>Effets sonores</strong><small>Noyaux, portails et collisions</small></span><input type="checkbox" id="effects" role="switch" checked></label>
+    <label class="setting-row" for="quality"><span><strong>Qualité graphique</strong><small>Résolution et diffusion lumineuse</small></span><select id="quality"><option value="high">Ultra</option><option value="balanced">Équilibrée</option></select></label>
+    <label class="setting-row" for="reducedMotion"><span><strong>Mouvements réduits</strong><small>Sans secousses ni effets d’ambiance</small></span><input type="checkbox" id="reducedMotion" role="switch"></label>
+    <p class="settings-note">Vos réglages et records sont sauvegardés sur cet appareil.</p>
+  </div><button class="primary-button" data-close>C’est parti <svg><use href="#i-arrow"/></svg></button></dialog>
+
+  <dialog id="help-dialog" aria-labelledby="help-title"><div class="dialog-header"><div><span class="eyebrow">LA RÈGLE EST SIMPLE</span><h2 id="help-title">Gardez le cap.</h2></div><button class="icon-button" data-close aria-label="Fermer"><svg><use href="#i-close"/></svg></button></div>
+    <div class="help-intro"><span class="food-symbol">◇</span><p>Attrapez les noyaux ambrés pour grandir et marquer des points. Évitez votre corps, les murs et les obstacles.</p></div>
+    <div class="help-controls"><div><span>Direction</span><strong>Flèches · ZQSD · WASD</strong></div><div><span>Boost / points ×2</span><strong>Espace ou Maj (maintenir)</strong></div><div><span>Caméra / pause / son</span><strong>C / Échap / M</strong></div><div><span>Tactile</span><strong>Glisser ou utiliser les flèches</strong></div><div><span>Manette</span><strong>Stick / A : boost / Y : caméra</strong></div></div>
+    <div class="help-tip"><strong>Enchaînez pour multiplier.</strong><p>Un noyau en moins de 6 secondes augmente le combo, jusqu’à ×5. Le boost consomme une réserve qui se recharge automatiquement.</p></div>
+    <div class="help-tip"><strong>Trois façons de voir l’arène.</strong><p>ISO et 2D : directions de la grille. En poursuite 3D, gauche et droite font tourner le serpent par rapport à sa trajectoire ; haut et bas ne changent pas le cap.</p></div>
+    <div class="help-tip"><strong>Flux & Survie.</strong><p>Flux : les bords se rejoignent ; deux portails apparaissent tous les 3 noyaux et le tempo accélère périodiquement. Survie : les cases rouges clignotent avant de devenir des obstacles.</p></div>
+    <button class="primary-button" data-close>Compris <svg><use href="#i-arrow"/></svg></button>
+  </dialog>
+  <div id="fatal-error" class="fatal-error" hidden role="alert"><h2>Le signal est interrompu.</h2><p></p><button class="primary-button" onclick="location.reload()">Recharger</button></div>
+  <noscript><div class="fatal-error"><h2>Activez JavaScript pour jouer.</h2><p>SERPENT utilise WebGL 2 et Web Audio, directement dans votre navigateur.</p></div></noscript>
+<script type="module">
+// ─── config.js ───
+const freeze = (object) => {
+  for (const value of Object.values(object)) {
+    if (value && typeof value === 'object') freeze(value);
+  }
+  return Object.freeze(object);
+};
+
+const CONFIG = freeze({
+  board: { size: 24, initialLength: 6, pointsPerFood: 100, foodSeed: 0x5e7e17 },
+  simulation: { fixedStep: 1 / 120, maxFrameDelta: 0.1, maxCatchupSteps: 13, inputBuffer: 2, clockEpsilon: 1e-9 },
+  gameplay: {
+    initialInterval: 0.155, minimumInterval: 0.075, acceleration: 0.0025,
+    boostFactor: 0.58, boostDrain: 0.32, boostRecovery: 0.16, minimumBoost: 0.12,
+    comboWindow: 6, maxCombo: 5, countdown: 2.4,
+    obstaclePeriod: 9, obstacleWarning: 2.4, obstacleLimit: 60,
+    fluxPeriod: 18, fluxDuration: 6, fluxSpeedFactor: 0.76,
+    portalPeriod: 3, portalMinimumDistance: 7,
+    foodEnergy: 0.12, obstacleBatch: 3, obstacleSafetyDistance: 5,
+  },
+  render: {
+    maxPixelRatio: 2, balancedPixelRatio: 1.35, frameSample: 0.5,
+    near: 0.1, far: 170, fieldOfView: Math.PI / 3.5,
+    bloomScale: 0.5, bloomStrength: 0.65, exposure: 1.15,
+    shadowSize: 1024, shadowExtent: 22, depthOfField: 1.8, radialBlur: 0.009,
+    cameraSmoothing: 5, shakeDecay: 5, foodHeight: 0.9,
+    particles: 640, stars: 85, particleGravity: 2.8,
+    background: [0.018, 0.031, 0.033],
+    mint: [0.32, 1, 0.71], teal: [0.04, 0.55, 0.58],
+    amber: [1, 0.62, 0.19], danger: [1, 0.22, 0.3],
+  },
+  camera: { isometric: [19, 22, 24], topHeight: 32, chaseDistance: 8.5, chaseHeight: 9, lookAhead: 4, portraitFit: 1.08 },
+  ui: { refreshInterval: 0.05, toastDuration: 2600, miniMapSize: 112 },
+  audio: { master: 0.45, music: 0.22, effects: 0.7, tempo: 100, lookahead: 0.16, pollMs: 45, maxVoices: 48 },
+  storage: { key: 'serpent-neon-protocol-v1', version: 1 },
+  modes: {
+    classic: { name: 'Néon', subtitle: 'Le classique, transcendé.', code: '01', wrap: false, speed: 1, multiplier: 1, color: '#81ffd1', description: 'Absorbez les noyaux. Évitez les murs et votre propre trace. Chaque noyau accélère le rythme.' },
+    flux: { name: 'Flux', subtitle: 'Défiez les frontières.', code: '02', wrap: true, speed: 0.92, multiplier: 1.5, color: '#a8a0ff', description: 'Traversez les bords et les portails. Une surcharge accélère le temps toutes les 18 secondes.' },
+    survival: { name: 'Survie', subtitle: 'L’arène se referme.', code: '03', wrap: false, speed: 1.05, multiplier: 2, color: '#ffc278', description: 'Des obstacles apparaissent toutes les 9 secondes. Les cases rouges annoncent leur arrivée : restez en mouvement.' },
+  },
+  cameras: [
+    { id: 'isometric', name: 'Isométrique', short: 'ISO', description: 'Perspective de l’arène' },
+    { id: 'top', name: 'Tactique', short: '2D', description: 'Vue verticale précise' },
+    { id: 'chase', name: 'Poursuite', short: '3D', description: 'Gauche / droite : virages relatifs' },
+  ],
+});
+
+const DIRECTIONS = freeze({ up: { x: 0, z: -1 }, right: { x: 1, z: 0 }, down: { x: 0, z: 1 }, left: { x: -1, z: 0 } });
+const DIRECTION_NAMES = Object.freeze(['up', 'right', 'down', 'left']);
+
+// ─── core/EventBus.js ───
+class EventBus {
+  #listeners = new Map();
+  on(type, callback) {
+    const listeners = this.#listeners.get(type) ?? new Set();
+    listeners.add(callback);
+    this.#listeners.set(type, listeners);
+    return () => listeners.delete(callback);
+  }
+  emit(type, payload) {
+    this.#listeners.get(type)?.forEach((callback) => callback(payload));
+  }
+  dispose() { this.#listeners.clear(); }
+}
+
+// ─── core/GameStateManager.js ───
+const TRANSITIONS = Object.freeze({
+  Boot: ['Menu'], Menu: ['Playing'], Playing: ['Paused', 'GameOver', 'Menu'],
+  Paused: ['Playing', 'Menu'], GameOver: ['Playing', 'Menu'],
+});
+
+class GameStateManager {
+  #state = 'Boot';
+  constructor(events) { this.events = events; }
+  get current() { return this.#state; }
+  is(state) { return this.#state === state; }
+  transition(next) {
+    if (next === this.#state) return false;
+    if (!TRANSITIONS[this.#state]?.includes(next)) throw new Error(`Transition interdite : ${this.#state} → ${next}`);
+    const previous = this.#state;
+    this.#state = next;
+    this.events.emit('state', { previous, current: next });
+    return true;
+  }
+}
+
+// ─── core/Storage.js ───
+
+class Storage {
+  constructor(backend) {
+    if (backend === undefined) { try { backend = globalThis.localStorage; } catch { backend = null; } }
+    this.backend = backend;
+    this.data = { version: CONFIG.storage.version, records: {}, settings: { volume: CONFIG.audio.master, music: true, effects: true, quality: 'high', reducedMotion: false, camera: 'isometric' }, runs: 0 };
+    try {
+      const saved = JSON.parse(backend?.getItem(CONFIG.storage.key) ?? 'null');
+      if (saved?.version === CONFIG.storage.version) {
+        for (const mode of Object.keys(CONFIG.modes)) {
+          const record = saved.records?.[mode];
+          if (Number.isFinite(record) && record >= 0) this.data.records[mode] = record;
+        }
+        for (const key of ['music', 'effects', 'reducedMotion']) {
+          if (typeof saved.settings?.[key] === 'boolean') this.data.settings[key] = saved.settings[key];
+        }
+        if (Number.isFinite(saved.settings?.volume)) this.data.settings.volume = Math.min(1, Math.max(0, saved.settings.volume));
+        if (['high', 'balanced'].includes(saved.settings?.quality)) this.data.settings.quality = saved.settings.quality;
+        if (CONFIG.cameras.some((camera) => camera.id === saved.settings?.camera)) this.data.settings.camera = saved.settings.camera;
+        if (Number.isInteger(saved.runs) && saved.runs >= 0) this.data.runs = saved.runs;
+      }
+    } catch { /* Storage can be disabled in private contexts; the session remains playable. */ }
+  }
+  best(mode) { return this.data.records[mode] ?? 0; }
+  record(mode, score) {
+    const previous = this.best(mode);
+    this.data.records[mode] = Math.max(previous, score);
+    this.data.runs += 1;
+    this.save();
+    return score > previous;
+  }
+  settings(patch) { Object.assign(this.data.settings, patch); this.save(); }
+  save() { try { this.backend?.setItem(CONFIG.storage.key, JSON.stringify(this.data)); } catch { /* In-memory persistence is the fallback. */ } }
+}
+
+// ─── core/Random.js ───
+class Random {
+  constructor(seed = (Date.now() ^ (Math.random() * 0xffffffff)) >>> 0) { this.seed = seed || 1; }
+  next() {
+    let value = this.seed;
+    value ^= value << 13; value ^= value >>> 17; value ^= value << 5;
+    this.seed = value >>> 0;
+    return this.seed / 0x100000000;
+  }
+  integer(maximum) { return Math.floor(this.next() * maximum); }
+}
+
+// ─── game/SnakeLogic.js ───
+
+const sameCell = (a, b) => a.x === b.x && a.z === b.z;
+const cellKey = (cell) => cell.z * CONFIG.board.size + cell.x;
+
+class SnakeLogic {
+  constructor() { this.reset(); }
+  reset() {
+    const center = Math.floor(CONFIG.board.size / 2);
+    this.body = Array.from({ length: CONFIG.board.initialLength }, (_, index) => ({ x: center - index, z: center }));
+    this.previousBody = this.body.map((cell) => ({ ...cell }));
+    this.direction = 'right';
+    this.queue = [];
+    this.teleported = false;
+  }
+  enqueue(direction) {
+    if (!DIRECTIONS[direction] || this.queue.length >= CONFIG.simulation.inputBuffer) return false;
+    const previous = this.queue.at(-1) ?? this.direction;
+    const a = DIRECTIONS[previous]; const b = DIRECTIONS[direction];
+    if (previous === direction || (a.x + b.x === 0 && a.z + b.z === 0)) return false;
+    this.queue.push(direction);
+    return true;
+  }
+  turn(relative) {
+    const index = DIRECTION_NAMES.indexOf(this.queue.at(-1) ?? this.direction);
+    return this.enqueue(DIRECTION_NAMES[(index + relative + DIRECTION_NAMES.length) % DIRECTION_NAMES.length]);
+  }
+  nextHead(wrap) {
+    if (this.queue.length) this.direction = this.queue.shift();
+    const vector = DIRECTIONS[this.direction];
+    let x = this.body[0].x + vector.x;
+    let z = this.body[0].z + vector.z;
+    this.teleported = false;
+    if (wrap) {
+      this.teleported = x < 0 || z < 0 || x >= CONFIG.board.size || z >= CONFIG.board.size;
+      x = (x + CONFIG.board.size) % CONFIG.board.size;
+      z = (z + CONFIG.board.size) % CONFIG.board.size;
+    }
+    return { x, z };
+  }
+  collides(head, grows, obstacles) {
+    if (head.x < 0 || head.z < 0 || head.x >= CONFIG.board.size || head.z >= CONFIG.board.size) return 'wall';
+    if (obstacles.some((cell) => sameCell(cell, head))) return 'obstacle';
+    const occupiedLength = this.body.length - (grows ? 0 : 1);
+    for (let index = 0; index < occupiedLength; index++) if (sameCell(this.body[index], head)) return 'self';
+    return null;
+  }
+  move(head, grows) {
+    this.previousBody = this.body;
+    this.body = [head, ...this.body.slice(0, grows ? this.body.length : -1)];
+  }
+}
+
+// ─── game/PhysicsEngine.js ───
+
+/** Fixed simulation clock. Rendering receives an independent interpolation fraction. */
+class PhysicsEngine {
+  constructor(step) { this.step = step; this.accumulator = 0; }
+  advance(deltaTime) {
+    this.accumulator += Math.min(Math.max(deltaTime, 0), CONFIG.simulation.maxFrameDelta);
+    let iterations = 0;
+    while (this.accumulator + CONFIG.simulation.clockEpsilon >= CONFIG.simulation.fixedStep && iterations < CONFIG.simulation.maxCatchupSteps) {
+      this.accumulator = Math.max(0, this.accumulator - CONFIG.simulation.fixedStep);
+      this.step(CONFIG.simulation.fixedStep);
+      iterations++;
+    }
+    return this.accumulator / CONFIG.simulation.fixedStep;
+  }
+  reset() { this.accumulator = 0; }
+}
+
+// ─── game/GameSession.js ───
+
+class GameSession {
+  constructor(events, random = new Random()) {
+    this.events = events;
+    this.random = random;
+    this.snake = new SnakeLogic();
+    this.reset('classic');
+  }
+  reset(mode) {
+    if (!CONFIG.modes[mode]) throw new Error(`Mode inconnu : ${mode}`);
+    this.mode = mode;
+    this.snake.reset();
+    this.score = 0; this.foods = 0; this.elapsed = 0; this.tickTime = 0;
+    this.energy = 1; this.boostRequested = false; this.boosting = false;
+    this.combo = 1; this.lastFoodTime = -Infinity; this.dead = false; this.won = false;
+    this.obstacles = []; this.warnings = []; this.portals = [];
+    this.nextObstacle = CONFIG.gameplay.obstaclePeriod;
+    this.countdown = CONFIG.gameplay.countdown;
+    this.fluxActive = false;
+    this.food = this.freeCell();
+  }
+  get interval() {
+    return Math.max(CONFIG.gameplay.minimumInterval, CONFIG.gameplay.initialInterval - this.foods * CONFIG.gameplay.acceleration)
+      * CONFIG.modes[this.mode].speed * (this.boosting ? CONFIG.gameplay.boostFactor : 1)
+      * (this.fluxActive ? CONFIG.gameplay.fluxSpeedFactor : 1);
+  }
+  get interpolation() { return Math.min(this.tickTime / this.interval, 1); }
+  freeCell(extra = [], minimumDistance = 0) {
+    const occupied = new Set([...this.snake.body, ...this.obstacles, ...this.warnings, ...this.portals, ...extra].map(cellKey));
+    const candidates = [];
+    for (let z = 0; z < CONFIG.board.size; z++) for (let x = 0; x < CONFIG.board.size; x++) {
+      if (!occupied.has(cellKey({ x, z })) && Math.abs(x - this.snake.body[0].x) + Math.abs(z - this.snake.body[0].z) >= minimumDistance) candidates.push({ x, z });
+    }
+    return candidates.length ? candidates[this.random.integer(candidates.length)] : null;
+  }
+  update(dt) {
+    if (this.dead) return;
+    if (this.countdown > 0) { this.countdown = Math.max(0, this.countdown - dt); return; }
+    this.elapsed += dt;
+    this.boosting = this.boostRequested && this.energy > (this.boosting ? 0 : CONFIG.gameplay.minimumBoost);
+    this.energy = Math.max(0, Math.min(1, this.energy + dt * (this.boosting ? -CONFIG.gameplay.boostDrain : CONFIG.gameplay.boostRecovery)));
+    if (this.elapsed - this.lastFoodTime > CONFIG.gameplay.comboWindow) this.combo = 1;
+    if (this.mode === 'flux') {
+      const active = this.elapsed >= CONFIG.gameplay.fluxPeriod && this.elapsed % CONFIG.gameplay.fluxPeriod < CONFIG.gameplay.fluxDuration;
+      if (active !== this.fluxActive) {
+        this.fluxActive = active;
+        this.events.emit('mutator', { active, text: active ? 'SURCHARGE TEMPORELLE' : 'FLUX STABILISÉ' });
+      }
+    }
+    if (this.mode === 'survival') this.updateObstacles();
+    this.tickTime += dt;
+    while (this.tickTime >= this.interval && !this.dead) {
+      this.tickTime -= this.interval;
+      this.tick();
+    }
+  }
+  tick() {
+    let head = this.snake.nextHead(CONFIG.modes[this.mode].wrap);
+    const portalIndex = this.portals.findIndex((portal) => sameCell(portal, head));
+    if (portalIndex !== -1 && this.portals.length === 2) {
+      head = { ...this.portals[1 - portalIndex] };
+      this.snake.teleported = true;
+      this.events.emit('portal', head);
+    }
+    const grows = this.food && sameCell(head, this.food);
+    const collision = this.snake.collides(head, grows, this.obstacles);
+    if (collision) { this.end(collision); return; }
+    this.snake.move(head, grows);
+    if (grows) this.collect(head);
+    this.events.emit('tick', { head, grows });
+  }
+  collect(head) {
+    this.combo = this.elapsed - this.lastFoodTime <= CONFIG.gameplay.comboWindow ? Math.min(CONFIG.gameplay.maxCombo, this.combo + 1) : 1;
+    this.lastFoodTime = this.elapsed;
+    this.foods++;
+    const points = Math.round(CONFIG.board.pointsPerFood * CONFIG.modes[this.mode].multiplier * this.combo * (this.boosting ? 2 : 1));
+    this.score += points;
+    this.energy = Math.min(1, this.energy + CONFIG.gameplay.foodEnergy);
+    this.events.emit('food', { ...head, points, combo: this.combo });
+    this.food = this.freeCell();
+    if (!this.food) { this.won = true; this.end('complete'); return; }
+    if (this.mode === 'flux' && this.foods % CONFIG.gameplay.portalPeriod === 0) {
+      this.portals = [];
+      const first = this.freeCell([this.food], CONFIG.gameplay.portalMinimumDistance);
+      if (first) {
+        const second = this.freeCell([this.food, first], CONFIG.gameplay.portalMinimumDistance);
+        if (second) this.portals = [first, second];
+      }
+      this.events.emit('mutator', { active: true, text: 'PORTAILS CONNECTÉS' });
+    }
+  }
+  updateObstacles() {
+    if (this.elapsed >= this.nextObstacle && this.obstacles.length + this.warnings.length < CONFIG.gameplay.obstacleLimit) {
+      this.nextObstacle += CONFIG.gameplay.obstaclePeriod;
+      const count = Math.min(CONFIG.gameplay.obstacleBatch, CONFIG.gameplay.obstacleLimit - this.obstacles.length - this.warnings.length);
+      for (let index = 0; index < count; index++) {
+        const cell = this.freeCell(this.food ? [this.food] : [], CONFIG.gameplay.obstacleSafetyDistance);
+        if (cell) this.warnings.push({ ...cell, activateAt: this.elapsed + CONFIG.gameplay.obstacleWarning });
+      }
+      this.events.emit('mutator', { active: true, text: 'OBSTACLES EN APPROCHE' });
+    }
+    this.warnings = this.warnings.filter((warning) => {
+      if (this.elapsed < warning.activateAt) return true;
+      // Never spawn a solid obstacle through a living segment; defer it visibly.
+      if (this.snake.body.some((cell) => sameCell(cell, warning))) return true;
+      this.obstacles.push({ x: warning.x, z: warning.z });
+      this.events.emit('obstacle', warning);
+      return false;
+    });
+  }
+  end(reason) {
+    if (this.dead) return;
+    this.dead = true; this.boosting = false; this.boostRequested = false;
+    this.events.emit('death', { reason, score: this.score, head: this.snake.body[0], won: this.won });
+  }
+}
+
+// ─── render/math.js ───
+const lerp = (a, b, t) => a + (b - a) * t;
+const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+function orthographic(out, extent, near, far) {
+  out.fill(0); out[0] = 1 / extent; out[5] = 1 / extent; out[10] = -2 / (far - near);
+  out[14] = -(far + near) / (far - near); out[15] = 1; return out;
+}
+function perspective(out, fov, aspect, near, far) {
+  const f = 1 / Math.tan(fov / 2); const range = 1 / (near - far);
+  out.fill(0); out[0] = f / aspect; out[5] = f; out[10] = (far + near) * range;
+  out[11] = -1; out[14] = 2 * far * near * range; return out;
+}
+function lookAt(out, eye, target, up = [0, 1, 0]) {
+  let zx = eye[0] - target[0], zy = eye[1] - target[1], zz = eye[2] - target[2];
+  let length = Math.hypot(zx, zy, zz); zx /= length; zy /= length; zz /= length;
+  let xx = up[1] * zz - up[2] * zy, xy = up[2] * zx - up[0] * zz, xz = up[0] * zy - up[1] * zx;
+  length = Math.hypot(xx, xy, xz); xx /= length; xy /= length; xz /= length;
+  const yx = zy * xz - zz * xy, yy = zz * xx - zx * xz, yz = zx * xy - zy * xx;
+  out[0] = xx; out[1] = yx; out[2] = zx; out[3] = 0;
+  out[4] = xy; out[5] = yy; out[6] = zy; out[7] = 0;
+  out[8] = xz; out[9] = yz; out[10] = zz; out[11] = 0;
+  out[12] = -(xx * eye[0] + xy * eye[1] + xz * eye[2]);
+  out[13] = -(yx * eye[0] + yy * eye[1] + yz * eye[2]);
+  out[14] = -(zx * eye[0] + zy * eye[1] + zz * eye[2]); out[15] = 1; return out;
+}
+function multiply(out, a, b) {
+  for (let column = 0; column < 4; column++) {
+    const x = b[column * 4], y = b[column * 4 + 1], z = b[column * 4 + 2], w = b[column * 4 + 3];
+    for (let row = 0; row < 4; row++) out[column * 4 + row] = a[row] * x + a[row + 4] * y + a[row + 8] * z + a[row + 12] * w;
+  }
+  return out;
+}
+
+// ─── render/geometry.js ───
+/** A bevelled cube, generated analytically: no mesh, material, or texture assets. */
+function roundedBox(subdivisions = 8, radius = 0.12) {
+  const vertices = [];
+  const faces = [
+    [1, 0, 0, 0, 1, 0, 0, 0, 1], [-1, 0, 0, 0, 1, 0, 0, 0, -1],
+    [0, 1, 0, 0, 0, 1, 1, 0, 0], [0, -1, 0, 0, 0, 1, -1, 0, 0],
+    [0, 0, 1, 1, 0, 0, 0, 1, 0], [0, 0, -1, -1, 0, 0, 0, 1, 0],
+  ];
+  const vertex = (face, u, v) => {
+    const point = [0, 1, 2].map((axis) => face[axis] * 0.5 + face[axis + 3] * u + face[axis + 6] * v);
+    const core = point.map((value) => Math.max(-0.5 + radius, Math.min(0.5 - radius, value)));
+    const normal = point.map((value, axis) => value - core[axis]);
+    const length = Math.hypot(...normal);
+    normal.forEach((value, axis) => { normal[axis] = value / length; });
+    vertices.push(...core.map((value, axis) => value + normal[axis] * radius), ...normal);
+  };
+  for (const face of faces) for (let y = 0; y < subdivisions; y++) for (let x = 0; x < subdivisions; x++) {
+    const u = x / subdivisions - 0.5, v = y / subdivisions - 0.5, d = 1 / subdivisions;
+    vertex(face, u, v); vertex(face, u + d, v); vertex(face, u + d, v + d);
+    vertex(face, u, v); vertex(face, u + d, v + d); vertex(face, u, v + d);
+  }
+  return new Float32Array(vertices);
+}
+
+function torus(segments = 48, sides = 6, thickness = 0.025) {
+  const vertices = [];
+  const vertex = (u, v) => {
+    const angle = u * Math.PI * 2, tube = v * Math.PI * 2;
+    const radius = 0.5 + Math.cos(tube) * thickness;
+    vertices.push(Math.cos(angle) * radius, Math.sin(tube) * thickness, Math.sin(angle) * radius,
+      Math.cos(angle) * Math.cos(tube), Math.sin(tube), Math.sin(angle) * Math.cos(tube));
+  };
+  for (let u = 0; u < segments; u++) for (let v = 0; v < sides; v++) {
+    vertex(u / segments, v / sides); vertex((u + 1) / segments, v / sides); vertex((u + 1) / segments, (v + 1) / sides);
+    vertex(u / segments, v / sides); vertex((u + 1) / segments, (v + 1) / sides); vertex(u / segments, (v + 1) / sides);
+  }
+  return new Float32Array(vertices);
+}
+
+// ─── render/shaders.js ───
+const meshVertex = `#version 300 es
+precision highp float;
+layout(location=0) in vec3 aPosition;
+layout(location=1) in vec3 aNormal;
+layout(location=2) in vec3 iPosition;
+layout(location=3) in vec3 iScale;
+layout(location=4) in vec3 iColor;
+layout(location=5) in vec2 iMaterial;
+uniform mat4 uViewProjection;
+out vec3 vWorld; out vec3 vNormal; out vec3 vColor; out float vEmission;
+void main(){
+  float c=cos(iMaterial.y),s=sin(iMaterial.y);
+  mat3 rotation=mat3(c,0.,-s,0.,1.,0.,s,0.,c);
+  vWorld=iPosition+rotation*(aPosition*iScale);
+  vNormal=normalize(rotation*(aNormal/iScale));
+  vColor=iColor; vEmission=iMaterial.x;
+  gl_Position=uViewProjection*vec4(vWorld,1.);
+}`;
+
+const meshFragment = `#version 300 es
+precision highp float;
+in vec3 vWorld; in vec3 vNormal; in vec3 vColor; in float vEmission;
+uniform vec3 uEye; uniform vec3 uFood; uniform vec3 uHead;
+uniform mat4 uLightViewProjection; uniform sampler2D uShadow; uniform float uShadowTexel;
+out vec4 outColor;
+float visibility(vec3 position){
+  vec4 light=uLightViewProjection*vec4(position,1.);vec3 shadow=light.xyz/light.w*.5+.5;
+  if(any(lessThan(shadow,vec3(0.)))||any(greaterThan(shadow,vec3(1.))))return 1.;
+  float lit=0.;
+  for(int x=-1;x<=1;x++)for(int y=-1;y<=1;y++)lit+=step(shadow.z-.0018,texture(uShadow,shadow.xy+vec2(x,y)*uShadowTexel).r);
+  return mix(.45,1.,lit/9.);
+}
+void main(){
+  vec3 normal=normalize(vNormal);
+  vec3 view=normalize(uEye-vWorld);
+  vec3 light=normalize(vec3(-.4,1.,.6));
+  float diffuse=max(dot(normal,light),0.);
+  float specular=pow(max(dot(normal,normalize(light+view)),0.),48.);
+  float fresnel=pow(1.-max(dot(normal,view),0.),3.);
+  float foodLight=2.2/(1.+dot(uFood-vWorld,uFood-vWorld)*.35);
+  float headLight=1.4/(1.+dot(uHead-vWorld,uHead-vWorld)*.3);
+  float shadow=visibility(vWorld);
+  vec3 color=vColor*(.24+diffuse*.64*shadow)+specular*vec3(.5,.75,.7)*.5*shadow;
+  color+=vColor*vEmission+fresnel*vColor*.24;
+  color+=vec3(1.,.48,.12)*foodLight*.09+vec3(.2,1.,.7)*headLight*.08;
+  float fog=1.-exp(-length(uEye-vWorld)*.006);
+  color=mix(color,vec3(.018,.031,.033),fog*.45);
+  outColor=vec4(color,1.);
+}`;
+
+const floorVertex = `#version 300 es
+precision highp float;
+uniform mat4 uViewProjection; uniform float uHalf;
+out vec2 vPosition;
+const vec2 points[6]=vec2[6](vec2(-1.,-1.),vec2(1.,-1.),vec2(1.,1.),vec2(-1.,-1.),vec2(1.,1.),vec2(-1.,1.));
+void main(){vPosition=points[gl_VertexID]*uHalf;gl_Position=uViewProjection*vec4(vPosition.x,.018,vPosition.y,1.);}
+`;
+const depthFragment = `#version 300 es
+precision highp float;
+void main(){}
+`;
+const floorFragment = `#version 300 es
+precision highp float;
+in vec2 vPosition;
+uniform float uTime; uniform float uHalf; uniform vec3 uFood; uniform vec3 uHead; uniform vec3 uTint;
+uniform mat4 uLightViewProjection; uniform sampler2D uShadow; uniform float uShadowTexel;
+out vec4 outColor;
+void main(){
+  vec2 grid=abs(fract(vPosition)-.5);
+  vec2 width=max(fwidth(vPosition),vec2(.001));
+  vec2 line=1.-smoothstep(vec2(.5)-width*.6,vec2(.5),grid);
+  float lines=1.-min(line.x,line.y);
+  vec2 majorGrid=abs(fract(vPosition/4.)-.5);
+  float major=max(smoothstep(.487,.5,majorGrid.x),smoothstep(.487,.5,majorGrid.y));
+  float edge=1.-smoothstep(uHalf-.08,uHalf,max(abs(vPosition.x),abs(vPosition.y)));
+  float foodDistance=length(vPosition-uFood.xz);
+  float headDistance=length(vPosition-uHead.xz);
+  float foodGlow=exp(-foodDistance*1.1);
+  float headGlow=exp(-headDistance*.72);
+  float foodRing=(1.-smoothstep(.012,.055,abs(foodDistance-(.7+fract(uTime*.5)*1.4))))*(1.-fract(uTime*.5));
+  float scan=exp(-abs(length(vPosition)-mod(uTime*2.,40.))*6.)*.035;
+  vec3 color=vec3(.023,.047,.049)+uTint*lines*.047+uTint*major*.012;
+  color+=uTint*headGlow*.11+vec3(1.,.4,.08)*(foodGlow*.2+foodRing*.16);
+  color+=uTint*scan+uTint*(1.-edge)*.35;
+  // A subtle circuit weave lives entirely in the fragment shader.
+  float dotGrid=(1.-smoothstep(.03,.065,length(fract(vPosition)-.5)))*.055;
+  color+=uTint*dotGrid;
+  vec4 light=uLightViewProjection*vec4(vPosition.x,.018,vPosition.y,1.);vec3 shadow=light.xyz/light.w*.5+.5;
+  float lit=0.;
+  for(int x=-1;x<=1;x++)for(int y=-1;y<=1;y++)lit+=step(shadow.z-.0007,texture(uShadow,shadow.xy+vec2(x,y)*uShadowTexel).r);
+  color*=mix(.42,1.,lit/9.);
+  outColor=vec4(color,1.);
+}`;
+
+const screenVertex = `#version 300 es
+precision highp float;
+out vec2 vUv;
+void main(){vec2 p=vec2(float((gl_VertexID<<1)&2),float(gl_VertexID&2));vUv=p;gl_Position=vec4(p*2.-1.,0.,1.);}
+`;
+const bloomFragment = `#version 300 es
+precision highp float;
+in vec2 vUv; uniform sampler2D uTexture; uniform vec2 uDirection; uniform bool uExtract;
+out vec4 outColor;
+vec3 sampleLight(vec2 uv){vec3 c=texture(uTexture,uv).rgb;return uExtract ? c*smoothstep(.42,.85,max(c.r,max(c.g,c.b))) : c;}
+void main(){
+  vec3 c=sampleLight(vUv)*.227027;
+  c+=sampleLight(vUv+uDirection*1.384615)*.316216;
+  c+=sampleLight(vUv-uDirection*1.384615)*.316216;
+  c+=sampleLight(vUv+uDirection*3.230769)*.070270;
+  c+=sampleLight(vUv-uDirection*3.230769)*.070270;
+  outColor=vec4(c,1.);
+}`;
+const compositeFragment = `#version 300 es
+precision highp float;
+in vec2 vUv; uniform sampler2D uScene; uniform sampler2D uBloom; uniform sampler2D uDepth;
+uniform float uBloomStrength; uniform float uTime; uniform float uImpact; uniform float uExposure;
+uniform vec2 uResolution; uniform vec2 uClip; uniform float uFocus; uniform float uDof; uniform float uSpeed;
+out vec4 outColor;
+void main(){
+  vec2 radial=vUv-.5; vec2 chroma=radial*uImpact*.003;
+  vec3 color=texture(uScene,vUv).rgb;
+  float depth=texture(uDepth,vUv).r*2.-1.;
+  float distance=(2.*uClip.x*uClip.y)/(uClip.y+uClip.x-depth*(uClip.y-uClip.x));
+  float coc=clamp(abs(distance-uFocus)/uFocus,0.,1.)*uDof;
+  if(coc>.1){
+    vec3 blur=color;
+    for(int i=0;i<8;i++){
+      float angle=float(i)*.785398;vec2 offset=vec2(cos(angle),sin(angle))*coc/uResolution;
+      blur+=texture(uScene,vUv+offset).rgb;
+    }
+    color=blur/9.;
+  }
+  if(uSpeed>0.){
+    vec3 streak=color;
+    for(int i=1;i<=4;i++)streak+=texture(uScene,vUv-radial*float(i)*uSpeed).rgb;
+    color=mix(color,streak/5.,smoothstep(.08,.35,length(radial))*.55);
+  }
+  color.r=mix(color.r,texture(uScene,vUv+chroma).r,uImpact);color.b=mix(color.b,texture(uScene,vUv-chroma).b,uImpact);
+  color+=texture(uBloom,vUv).rgb*uBloomStrength;
+  color=1.-exp(-color*uExposure);
+  color=pow(color,vec3(.87));
+  float vignette=1.-dot(radial,radial)*.65;
+  float grain=fract(sin(dot(vUv+fract(uTime),vec2(12.9898,78.233)))*43758.5453)-.5;
+  color=color*vignette+grain*.008;
+  outColor=vec4(color,1.);
+}`;
+const particleVertex = `#version 300 es
+precision highp float;
+layout(location=0) in vec3 aPosition; layout(location=1) in vec4 aColor; layout(location=2) in float aSize;
+uniform mat4 uViewProjection; uniform float uPixelRatio;
+out vec4 vColor;
+void main(){gl_Position=uViewProjection*vec4(aPosition,1.);gl_PointSize=clamp(aSize*uPixelRatio*220./gl_Position.w,1.,40.);vColor=aColor;}
+`;
+const particleFragment = `#version 300 es
+precision highp float;
+in vec4 vColor; out vec4 outColor;
+void main(){float d=length(gl_PointCoord-.5)*2.;if(d>1.)discard;float a=pow(1.-d,1.6);outColor=vec4(vColor.rgb,vColor.a*a);}
+`;
+
+const shaders = { meshVertex, meshFragment, floorVertex, depthFragment, floorFragment, screenVertex, bloomFragment, compositeFragment, particleVertex, particleFragment };
+
+// ─── render/ParticleSystem.js ───
+
+const STRIDE = 12;
+class ParticleSystem {
+  constructor() {
+    this.pool = new Float32Array(CONFIG.render.particles * STRIDE);
+    this.vertices = new Float32Array((CONFIG.render.particles + CONFIG.render.stars) * 8);
+    this.cursor = 0;
+    this.stars = Array.from({ length: CONFIG.render.stars }, () => [
+      (Math.random() - 0.5) * 55, Math.random() * 14 + 0.5, (Math.random() - 0.5) * 48, Math.random() * 6,
+    ]);
+  }
+  burst(x, z, color, count = 36, power = 1) {
+    for (let index = 0; index < count; index++) {
+      const offset = this.cursor * STRIDE;
+      const angle = Math.random() * Math.PI * 2, speed = (1 + Math.random() * 4) * power;
+      this.pool.set([x, 0.6, z, Math.cos(angle) * speed, (1 + Math.random() * 5) * power, Math.sin(angle) * speed,
+        color[0], color[1], color[2], 0.5 + Math.random() * 0.8, 1.3, 0.25 + Math.random() * 0.65], offset);
+      this.cursor = (this.cursor + 1) % CONFIG.render.particles;
+    }
+  }
+  update(dt, time, reducedMotion) {
+    let count = 0;
+    for (let offset = 0; offset < this.pool.length; offset += STRIDE) {
+      if (this.pool[offset + 9] <= 0) continue;
+      this.pool[offset + 9] -= dt;
+      this.pool[offset] += this.pool[offset + 3] * dt;
+      this.pool[offset + 1] += this.pool[offset + 4] * dt;
+      this.pool[offset + 2] += this.pool[offset + 5] * dt;
+      this.pool[offset + 4] -= CONFIG.render.particleGravity * dt;
+      if (this.pool[offset + 1] < 0.06) { this.pool[offset + 1] = 0.06; this.pool[offset + 4] *= -0.35; }
+      const vertex = count++ * 8;
+      this.vertices.set([this.pool[offset], this.pool[offset + 1], this.pool[offset + 2], this.pool[offset + 6], this.pool[offset + 7], this.pool[offset + 8], Math.max(0, this.pool[offset + 9] / this.pool[offset + 10]), this.pool[offset + 11]], vertex);
+    }
+    if (!reducedMotion) for (const star of this.stars) {
+      this.vertices.set([star[0], star[1] + Math.sin(time * 0.2 + star[3]) * 0.7, star[2], 0.25, 0.7, 0.59,
+        0.16 + Math.sin(time * 0.7 + star[3]) * 0.1, 0.26], count++ * 8);
+    }
+    this.count = count;
+  }
+  clear() { this.pool.fill(0); this.count = 0; }
+}
+
+// ─── render/RenderPipeline.js ───
+
+const INSTANCE_STRIDE = 11;
+const MAX_INSTANCES = CONFIG.board.size ** 2 * 3 + 256;
+const HALF = CONFIG.board.size / 2;
+const world = (value) => value - HALF + 0.5;
+const TAIL = CONFIG.render.teal;
+const DEMO_PATH = [];
+const WAYPOINTS = [[6, 5], [18, 5], [18, 10], [11, 10], [11, 15], [18, 15], [18, 19], [6, 19]];
+for (let index = 0; index < WAYPOINTS.length; index++) {
+  let [x, z] = WAYPOINTS[index];
+  const [endX, endZ] = WAYPOINTS[(index + 1) % WAYPOINTS.length];
+  while (x !== endX || z !== endZ) { DEMO_PATH.push({ x, z }); x += Math.sign(endX - x); z += Math.sign(endZ - z); }
+}
+
+class RenderPipeline {
+  constructor(canvas, events, settings) {
+    this.canvas = canvas; this.events = events; this.settings = settings;
+    this.abort = new AbortController(); this.resources = [];
+    this.gl = canvas.getContext('webgl2', { alpha: false, antialias: false, powerPreference: 'high-performance', depth: true, preserveDrawingBuffer: false });
+    if (!this.gl) throw new Error('WebGL 2 est indisponible. Activez l’accélération graphique de votre navigateur puis rechargez.');
+    this.particles = new ParticleSystem();
+    this.camera = settings.camera;
+    this.eye = new Float32Array(CONFIG.camera.isometric); this.target = new Float32Array([0, 0, 0]);
+    this.view = new Float32Array(16); this.projection = new Float32Array(16); this.viewProjection = new Float32Array(16);
+    this.head = new Float32Array(3); this.foodPosition = new Float32Array(3);
+    this.instances = new Float32Array(MAX_INSTANCES * INSTANCE_STRIDE);
+    this.ringInstances = new Float32Array(32 * INSTANCE_STRIDE);
+    this.ambientRingInstances = new Float32Array(2 * INSTANCE_STRIDE);
+    this.shake = 0; this.impact = 0; this.time = 0; this.lost = false;
+    try { this.initialize(); } catch (error) {
+      this.disposeTargets();
+      for (const [kind, resource] of this.resources) this.gl[`delete${kind}`](resource);
+      this.gl.getExtension('WEBGL_lose_context')?.loseContext();
+      throw error;
+    }
+    canvas.addEventListener('webglcontextlost', (event) => { event.preventDefault(); this.lost = true; events.emit('graphicslost'); }, { signal: this.abort.signal });
+    canvas.addEventListener('webglcontextrestored', () => {
+      this.resources = []; this.targets = null; this.initialize(); this.lost = false; events.emit('graphicsrestored');
+    }, { signal: this.abort.signal });
+    this.resizeObserver = new ResizeObserver(() => this.resize());
+    this.resizeObserver.observe(canvas);
+    this.unsubscribers = [
+      events.on('food', (event) => { this.particles.burst(world(event.x), world(event.z), CONFIG.render.amber, 48); this.shake = 0.15; this.impact = 0.6; }),
+      events.on('death', (event) => { this.particles.burst(world(event.head.x), world(event.head.z), event.won ? CONFIG.render.mint : CONFIG.render.danger, 140, 1.7); this.shake = 0.65; this.impact = 1; }),
+      events.on('portal', (event) => { this.particles.burst(world(event.x), world(event.z), [0.6, 0.45, 1], 48); this.impact = 0.7; }),
+      events.on('obstacle', (event) => this.particles.burst(world(event.x), world(event.z), CONFIG.render.danger, 18, 0.5)),
+    ];
+  }
+  track(kind, resource) { this.resources.push([kind, resource]); return resource; }
+  program(vertexSource, fragmentSource) {
+    const gl = this.gl;
+    const compile = (type, source) => {
+      const shader = gl.createShader(type); gl.shaderSource(shader, source); gl.compileShader(shader);
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) { const error = gl.getShaderInfoLog(shader); gl.deleteShader(shader); throw new Error(`Compilation GLSL : ${error}`); }
+      return shader;
+    };
+    const vertex = compile(gl.VERTEX_SHADER, vertexSource), fragment = compile(gl.FRAGMENT_SHADER, fragmentSource);
+    const program = this.track('Program', gl.createProgram()); gl.attachShader(program, vertex); gl.attachShader(program, fragment); gl.linkProgram(program);
+    gl.deleteShader(vertex); gl.deleteShader(fragment);
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) throw new Error(`Programme GLSL : ${gl.getProgramInfoLog(program)}`);
+    const uniforms = {};
+    for (let index = 0; index < gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS); index++) {
+      const name = gl.getActiveUniform(program, index).name; uniforms[name] = gl.getUniformLocation(program, name);
+    }
+    return { program, uniforms };
+  }
+  mesh(vertices, capacity) {
+    const gl = this.gl;
+    const vao = this.track('VertexArray', gl.createVertexArray()); gl.bindVertexArray(vao);
+    const buffer = this.track('Buffer', gl.createBuffer()); gl.bindBuffer(gl.ARRAY_BUFFER, buffer); gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+    for (let attribute = 0; attribute < 2; attribute++) { gl.enableVertexAttribArray(attribute); gl.vertexAttribPointer(attribute, 3, gl.FLOAT, false, 24, attribute * 12); }
+    const instanceBuffer = this.track('Buffer', gl.createBuffer()); gl.bindBuffer(gl.ARRAY_BUFFER, instanceBuffer); gl.bufferData(gl.ARRAY_BUFFER, capacity * INSTANCE_STRIDE * 4, gl.DYNAMIC_DRAW);
+    for (const [attribute, size, offset] of [[2, 3, 0], [3, 3, 3], [4, 3, 6], [5, 2, 9]]) {
+      gl.enableVertexAttribArray(attribute); gl.vertexAttribPointer(attribute, size, gl.FLOAT, false, INSTANCE_STRIDE * 4, offset * 4); gl.vertexAttribDivisor(attribute, 1);
+    }
+    gl.bindVertexArray(null); return { vao, instanceBuffer, count: vertices.length / 6 };
+  }
+  initialize() {
+    const gl = this.gl;
+    this.hdr = Boolean(gl.getExtension('EXT_color_buffer_float'));
+    this.meshProgram = this.program(shaders.meshVertex, shaders.meshFragment);
+    this.depthProgram = this.program(shaders.meshVertex, shaders.depthFragment);
+    this.floorProgram = this.program(shaders.floorVertex, shaders.floorFragment);
+    this.bloomProgram = this.program(shaders.screenVertex, shaders.bloomFragment);
+    this.compositeProgram = this.program(shaders.screenVertex, shaders.compositeFragment);
+    this.particleProgram = this.program(shaders.particleVertex, shaders.particleFragment);
+    this.boxMesh = this.mesh(roundedBox(4), MAX_INSTANCES);
+    this.ringMesh = this.mesh(torus(), 32);
+    this.ambientRingMesh = this.mesh(torus(96, 4, 0.001), 2);
+    this.emptyVao = this.track('VertexArray', gl.createVertexArray());
+    this.particleVao = this.track('VertexArray', gl.createVertexArray()); gl.bindVertexArray(this.particleVao);
+    this.particleBuffer = this.track('Buffer', gl.createBuffer()); gl.bindBuffer(gl.ARRAY_BUFFER, this.particleBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, this.particles.vertices.byteLength, gl.DYNAMIC_DRAW);
+    for (const [attribute, size, offset] of [[0, 3, 0], [1, 4, 3], [2, 1, 7]]) {
+      gl.enableVertexAttribArray(attribute); gl.vertexAttribPointer(attribute, size, gl.FLOAT, false, 32, offset * 4);
+    }
+    gl.bindVertexArray(null); gl.disable(gl.CULL_FACE);
+    this.initializeShadows();
+    this.resize(true);
+  }
+  initializeShadows() {
+    const gl = this.gl, size = CONFIG.render.shadowSize;
+    this.shadowTexture = this.track('Texture', gl.createTexture()); gl.bindTexture(gl.TEXTURE_2D, this.shadowTexture);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.DEPTH_COMPONENT24, size, size, 0, gl.DEPTH_COMPONENT, gl.UNSIGNED_INT, null);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    this.shadowFramebuffer = this.track('Framebuffer', gl.createFramebuffer()); gl.bindFramebuffer(gl.FRAMEBUFFER, this.shadowFramebuffer);
+    gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.DEPTH_ATTACHMENT, gl.TEXTURE_2D, this.shadowTexture, 0); gl.drawBuffers([gl.NONE]); gl.readBuffer(gl.NONE);
+    if (gl.checkFramebufferStatus(gl.FRAMEBUFFER) !== gl.FRAMEBUFFER_COMPLETE) throw new Error('Impossible d’initialiser les ombres.');
+    const lightView = lookAt(new Float32Array(16), [-18, 36, 25], [0, 0, 0]);
+    const lightProjection = orthographic(new Float32Array(16), CONFIG.render.shadowExtent, 1, 85);
+    this.lightViewProjection = multiply(new Float32Array(16), lightProjection, lightView);
+  }
+  bindShadowUniforms(uniforms) {
+    const gl = this.gl;
+    gl.uniformMatrix4fv(uniforms.uLightViewProjection, false, this.lightViewProjection);
+    gl.activeTexture(gl.TEXTURE3); gl.bindTexture(gl.TEXTURE_2D, this.shadowTexture); gl.uniform1i(uniforms.uShadow, 3);
+    gl.uniform1f(uniforms.uShadowTexel, 1 / CONFIG.render.shadowSize);
+  }
+  createTarget(width, height, depth) {
+    const gl = this.gl;
+    const framebuffer = gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+    const texture = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, texture);
+    gl.texImage2D(gl.TEXTURE_2D, 0, this.hdr ? gl.RGBA16F : gl.RGBA8, width, height, 0, gl.RGBA, this.hdr ? gl.HALF_FLOAT : gl.UNSIGNED_BYTE, null);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, texture, 0);
+    let depthTexture = null;
+    if (depth) {
+      depthTexture = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, depthTexture);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.DEPTH_COMPONENT24, width, height, 0, gl.DEPTH_COMPONENT, gl.UNSIGNED_INT, null);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.DEPTH_ATTACHMENT, gl.TEXTURE_2D, depthTexture, 0);
+    }
+    if (gl.checkFramebufferStatus(gl.FRAMEBUFFER) !== gl.FRAMEBUFFER_COMPLETE) throw new Error('La mémoire graphique ne permet pas de créer le rendu.');
+    return { framebuffer, texture, depthTexture, width, height };
+  }
+  disposeTargets() {
+    if (!this.targets) return;
+    for (const target of this.targets) {
+      this.gl.deleteFramebuffer(target.framebuffer); this.gl.deleteTexture(target.texture);
+      if (target.depthTexture) this.gl.deleteTexture(target.depthTexture);
+    }
+    this.targets = null;
+  }
+  resize(force = false) {
+    if (this.lost) return;
+    const ratioLimit = this.settings.quality === 'high' ? CONFIG.render.maxPixelRatio : CONFIG.render.balancedPixelRatio;
+    this.pixelRatio = Math.min(window.devicePixelRatio || 1, ratioLimit);
+    const width = Math.max(1, Math.round(this.canvas.clientWidth * this.pixelRatio)), height = Math.max(1, Math.round(this.canvas.clientHeight * this.pixelRatio));
+    if (!force && this.canvas.width === width && this.canvas.height === height) return;
+    this.canvas.width = width; this.canvas.height = height;
+    this.disposeTargets();
+    const bloomWidth = Math.max(1, Math.floor(width * CONFIG.render.bloomScale)), bloomHeight = Math.max(1, Math.floor(height * CONFIG.render.bloomScale));
+    this.targets = [this.createTarget(width, height, true), this.createTarget(bloomWidth, bloomHeight, false), this.createTarget(bloomWidth, bloomHeight, false)];
+    this.gl.bindFramebuffer(this.gl.FRAMEBUFFER, null);
+  }
+  setCamera(camera) { this.camera = camera; }
+  addBox(x, y, z, sx, sy, sz, color, emission = 0, angle = 0) {
+    if (this.boxCount >= MAX_INSTANCES) return;
+    this.instances.set([x, y, z, sx, sy, sz, color[0], color[1], color[2], emission, angle], this.boxCount++ * INSTANCE_STRIDE);
+  }
+  addRing(x, y, z, size, color, emission = 1) {
+    this.ringInstances.set([x, y, z, size, size, size, ...color, emission, 0], this.ringCount++ * INSTANCE_STRIDE);
+  }
+  buildScene(session, state) {
+    this.boxCount = 0; this.ringCount = 0;
+    const demo = state === 'Menu' || state === 'Boot';
+    const t = this.settings.reducedMotion ? 0 : this.time;
+    const tint = session.mode === 'flux' ? [0.54, 0.46, 1] : CONFIG.render.mint;
+    this.tint = tint;
+    this.addBox(0, -0.44, 0, CONFIG.board.size + 0.4, 0.85, CONFIG.board.size + 0.4, [0.025, 0.065, 0.071]);
+    const railColor = session.mode === 'survival' ? CONFIG.render.amber : tint;
+    for (const sign of [-1, 1]) {
+      this.addBox(sign * (HALF + 0.1), -0.04, 0, 0.055, 0.07, CONFIG.board.size + 0.1, railColor, 0.6);
+      this.addBox(0, -0.04, sign * (HALF + 0.1), CONFIG.board.size + 0.1, 0.07, 0.055, railColor, 0.6);
+      this.addBox(sign * (HALF + 0.05), -0.58, 0, 0.045, 0.045, CONFIG.board.size - 0.4, tint, 0.45);
+      this.addBox(0, -0.58, sign * (HALF + 0.05), CONFIG.board.size - 0.4, 0.045, 0.045, tint, 0.45);
+      for (let tick = -HALF + 2; tick < HALF; tick += 2) {
+        this.addBox(tick, 0.02, sign * (HALF + 0.55), 0.035, 0.025, 0.22, tint, 0.15);
+        this.addBox(sign * (HALF + 0.55), 0.02, tick, 0.22, 0.025, 0.035, tint, 0.15);
+      }
+    }
+    // An underlit suspension ring and four corner beacons frame the playable grid.
+    for (let index = 0; index < 2; index++) {
+      const size = CONFIG.board.size * (1.28 + index * 0.13);
+      this.ambientRingInstances.set([0, -1.5 - index * 0.6, 0, size, size, size, ...tint.map((value) => value * 0.22), 0.12, 0], index * INSTANCE_STRIDE);
+    }
+    for (const xSign of [-1, 1]) for (const zSign of [-1, 1]) {
+      const x = xSign * (HALF + 0.55), z = zSign * (HALF + 0.55);
+      this.addBox(x, -0.3, z, 0.35, 1.1, 0.35, [0.04, 0.12, 0.1]);
+      this.addBox(x, 0.26, z, 0.29, 0.055, 0.29, tint, 0.8);
+    }
+    const food = demo ? { x: 15, z: 13 } : session.food;
+    if (food) {
+      const x = world(food.x), z = world(food.z), y = CONFIG.render.foodHeight + Math.sin(t * 2.8) * 0.13;
+      this.foodPosition.set([x, y, z]);
+      this.addBox(x, y, z, 0.47, 0.62, 0.47, CONFIG.render.amber, 1.15, t * 0.8);
+      this.addBox(x, y, z, 0.2, 0.83, 0.2, [1, 0.87, 0.45], 1.3, -t);
+      this.addRing(x, 0.09, z, 1.4, CONFIG.render.amber, 0.65);
+      this.addRing(x, 0.12, z, 1.8 + Math.sin(t * 2) * 0.12, CONFIG.render.amber, 0.18);
+    } else this.foodPosition.set([100, 0, 100]);
+    const length = demo ? 34 : session.snake.body.length;
+    const fraction = demo ? (t * 4) % 1 : session.interpolation;
+    const demoIndex = Math.floor(t * 4) + 29;
+    let headDirection = DIRECTIONS[session.snake.direction];
+    for (let index = length - 1; index >= 0; index--) {
+      let current, previous;
+      if (demo) {
+        current = DEMO_PATH[((demoIndex - index) % DEMO_PATH.length + DEMO_PATH.length) % DEMO_PATH.length];
+        previous = DEMO_PATH[((demoIndex - index - 1) % DEMO_PATH.length + DEMO_PATH.length) % DEMO_PATH.length];
+        if (index === 0) headDirection = { x: current.x - previous.x, z: current.z - previous.z };
+      } else {
+        current = session.snake.body[index]; previous = session.snake.previousBody[index] ?? current;
+      }
+      const discontinuity = Math.abs(current.x - previous.x) + Math.abs(current.z - previous.z) > 1;
+      const x = world(discontinuity ? current.x : lerp(previous.x, current.x, fraction));
+      const z = world(discontinuity ? current.z : lerp(previous.z, current.z, fraction));
+      const head = index === 0;
+      const progress = 1 - index / length;
+      const color = session.dead && !demo ? CONFIG.render.danger : [lerp(TAIL[0], tint[0], progress), lerp(TAIL[1], tint[1], progress), lerp(TAIL[2], tint[2], progress)];
+      const size = head ? 0.91 : lerp(0.59, 0.87, Math.min(1, progress * 3));
+      const height = head ? 0.7 : 0.57 + Math.sin(t * 3 - index * 0.55) * (this.settings.reducedMotion ? 0 : 0.035);
+      // Ground projections give contact and a luminous reflection without a texture asset.
+      this.addBox(x, 0.036, z, size * 1.2, 0.012, size * 1.2, color.map((c) => c * 0.1), 0.12);
+      this.addBox(x, height / 2 + 0.07, z, size, height, size, color, head ? 0.68 : 0.18 + progress * 0.18);
+      this.addBox(x, height + 0.075, z, size * 0.66, 0.012, size * 0.66, color, head ? 0.6 : 0.28);
+      if (head) {
+        this.head.set([x, 0.5, z]);
+        const dx = headDirection.x, dz = headDirection.z;
+        for (const sign of [-1, 1]) {
+          this.addBox(x + dx * 0.32 + dz * sign * 0.23, height + 0.09, z + dz * 0.32 - dx * sign * 0.23, 0.14, 0.025, 0.14, [0.01, 0.08, 0.07]);
+          this.addBox(x + dx * 0.35 + dz * sign * 0.23, height + 0.11, z + dz * 0.35 - dx * sign * 0.23, 0.065, 0.025, 0.065, [0.9, 1, 0.88], 1.3);
+        }
+      }
+    }
+    this.headDirection = headDirection;
+    if (!demo) {
+      for (const obstacle of session.obstacles) {
+        const x = world(obstacle.x), z = world(obstacle.z);
+        this.addBox(x, 0.65, z, 0.86, 1.3, 0.86, [0.15, 0.07, 0.085]);
+        this.addBox(x, 1.31, z, 0.7, 0.03, 0.7, CONFIG.render.danger, 0.65);
+      }
+      for (const warning of session.warnings) {
+        this.addBox(world(warning.x), 0.04, world(warning.z), 0.9, 0.025, 0.9, CONFIG.render.danger, 0.2 + (Math.sin(t * 13) * 0.5 + 0.5) * 0.8);
+      }
+      for (let index = 0; index < session.portals.length; index++) {
+        const portal = session.portals[index], color = index ? [1, 0.4, 0.75] : [0.5, 0.4, 1];
+        for (let ring = 0; ring < 3; ring++) this.addRing(world(portal.x), 0.15 + ring * 0.27, world(portal.z), 0.9 + Math.sin(t * 3 + ring) * 0.12, color, 0.8);
+      }
+    }
+  }
+  updateCamera(dt, session, state) {
+    const aspect = this.canvas.width / this.canvas.height;
+    const scale = Math.max(1, CONFIG.camera.portraitFit / aspect);
+    const demo = state === 'Menu' || state === 'Boot';
+    let eye, target = [0, -0.5, 0];
+    const mode = this.camera;
+    if (mode === 'top') eye = [0, CONFIG.camera.topHeight * scale, 0.02];
+    else if (mode === 'chase') {
+      const direction = this.headDirection ?? DIRECTIONS[session.snake.direction];
+      eye = [this.head[0] - direction.x * CONFIG.camera.chaseDistance, CONFIG.camera.chaseHeight, this.head[2] - direction.z * CONFIG.camera.chaseDistance];
+      target = [this.head[0] + direction.x * CONFIG.camera.lookAhead, 0, this.head[2] + direction.z * CONFIG.camera.lookAhead];
+    } else {
+      const orbit = demo && !this.settings.reducedMotion ? Math.sin(this.time * 0.08) * 0.05 : 0;
+      eye = [(CONFIG.camera.isometric[0] + orbit * 25) * scale, CONFIG.camera.isometric[1] * scale, (CONFIG.camera.isometric[2] - orbit * 25) * scale];
+    }
+    const smoothing = 1 - Math.exp(-dt * CONFIG.render.cameraSmoothing);
+    for (let axis = 0; axis < 3; axis++) { this.eye[axis] = lerp(this.eye[axis], eye[axis], smoothing); this.target[axis] = lerp(this.target[axis], target[axis], smoothing); }
+    this.shake *= Math.exp(-dt * CONFIG.render.shakeDecay); this.impact *= Math.exp(-dt * CONFIG.render.shakeDecay);
+    const shake = this.settings.reducedMotion ? 0 : this.shake;
+    const shakenEye = [this.eye[0] + Math.sin(this.time * 93) * shake, this.eye[1] + Math.cos(this.time * 111) * shake, this.eye[2]];
+    lookAt(this.view, shakenEye, this.target);
+    perspective(this.projection, CONFIG.render.fieldOfView, aspect, CONFIG.render.near, CONFIG.render.far);
+    multiply(this.viewProjection, this.projection, this.view);
+  }
+  use(program) { this.gl.useProgram(program.program); return program.uniforms; }
+  drawInstances(mesh, instances, count) {
+    const gl = this.gl; gl.bindVertexArray(mesh.vao); gl.bindBuffer(gl.ARRAY_BUFFER, mesh.instanceBuffer);
+    gl.bufferSubData(gl.ARRAY_BUFFER, 0, instances, 0, count * INSTANCE_STRIDE); gl.drawArraysInstanced(gl.TRIANGLES, 0, mesh.count, count);
+  }
+  render(dt, session, state) {
+    if (this.lost || !this.targets) return;
+    this.time += dt;
+    this.buildScene(session, state); this.updateCamera(dt, session, state);
+    this.particles.update(dt, this.time, this.settings.reducedMotion);
+    const gl = this.gl, [scene, bloomA, bloomB] = this.targets;
+    gl.bindFramebuffer(gl.FRAMEBUFFER, this.shadowFramebuffer); gl.viewport(0, 0, CONFIG.render.shadowSize, CONFIG.render.shadowSize);
+    gl.enable(gl.DEPTH_TEST); gl.depthMask(true); gl.disable(gl.BLEND); gl.clear(gl.DEPTH_BUFFER_BIT);
+    let uniforms = this.use(this.depthProgram); gl.uniformMatrix4fv(uniforms.uViewProjection, false, this.lightViewProjection);
+    this.drawInstances(this.boxMesh, this.instances, this.boxCount);
+    gl.bindFramebuffer(gl.FRAMEBUFFER, scene.framebuffer); gl.viewport(0, 0, scene.width, scene.height);
+    gl.clearColor(...CONFIG.render.background, 1); gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    gl.enable(gl.DEPTH_TEST); gl.depthMask(true); gl.disable(gl.BLEND);
+    uniforms = this.use(this.meshProgram); this.bindShadowUniforms(uniforms);
+    gl.uniformMatrix4fv(uniforms.uViewProjection, false, this.viewProjection); gl.uniform3fv(uniforms.uEye, this.eye);
+    gl.uniform3fv(uniforms.uFood, this.foodPosition); gl.uniform3fv(uniforms.uHead, this.head);
+    this.drawInstances(this.boxMesh, this.instances, this.boxCount);
+    this.drawInstances(this.ringMesh, this.ringInstances, this.ringCount);
+    this.drawInstances(this.ambientRingMesh, this.ambientRingInstances, 2);
+    uniforms = this.use(this.floorProgram); gl.bindVertexArray(this.emptyVao);
+    this.bindShadowUniforms(uniforms);
+    gl.uniformMatrix4fv(uniforms.uViewProjection, false, this.viewProjection); gl.uniform1f(uniforms.uHalf, HALF);
+    gl.uniform1f(uniforms.uTime, this.settings.reducedMotion ? 0 : this.time); gl.uniform3fv(uniforms.uFood, this.foodPosition);
+    gl.uniform3fv(uniforms.uHead, this.head); gl.uniform3fv(uniforms.uTint, this.tint); gl.drawArrays(gl.TRIANGLES, 0, 6);
+    uniforms = this.use(this.particleProgram); gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA, gl.ONE); gl.depthMask(false);
+    gl.uniformMatrix4fv(uniforms.uViewProjection, false, this.viewProjection); gl.uniform1f(uniforms.uPixelRatio, this.pixelRatio);
+    gl.bindVertexArray(this.particleVao); gl.bindBuffer(gl.ARRAY_BUFFER, this.particleBuffer);
+    gl.bufferSubData(gl.ARRAY_BUFFER, 0, this.particles.vertices, 0, this.particles.count * 8); gl.drawArrays(gl.POINTS, 0, this.particles.count);
+    gl.depthMask(true); gl.disable(gl.BLEND); gl.disable(gl.DEPTH_TEST); gl.bindVertexArray(this.emptyVao);
+    uniforms = this.use(this.bloomProgram); gl.activeTexture(gl.TEXTURE0); gl.uniform1i(uniforms.uTexture, 0);
+    const passes = this.settings.quality === 'high' ? 4 : 2;
+    let source = scene, destination;
+    for (let pass = 0; pass < passes; pass++) {
+      destination = pass % 2 === 0 ? bloomA : bloomB;
+      gl.bindFramebuffer(gl.FRAMEBUFFER, destination.framebuffer); gl.viewport(0, 0, destination.width, destination.height);
+      gl.bindTexture(gl.TEXTURE_2D, source.texture); gl.uniform1i(uniforms.uExtract, pass === 0 ? 1 : 0);
+      gl.uniform2f(uniforms.uDirection, pass % 2 === 0 ? 1.6 / source.width : 0, pass % 2 ? 1.6 / source.height : 0);
+      gl.drawArrays(gl.TRIANGLES, 0, 3); source = destination;
+    }
+    uniforms = this.use(this.compositeProgram); gl.bindFramebuffer(gl.FRAMEBUFFER, null); gl.viewport(0, 0, scene.width, scene.height);
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, scene.texture); gl.uniform1i(uniforms.uScene, 0);
+    gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, source.texture); gl.uniform1i(uniforms.uBloom, 1);
+    gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D, scene.depthTexture); gl.uniform1i(uniforms.uDepth, 2);
+    gl.uniform2f(uniforms.uResolution, scene.width, scene.height); gl.uniform2f(uniforms.uClip, CONFIG.render.near, CONFIG.render.far);
+    gl.uniform1f(uniforms.uFocus, Math.hypot(this.eye[0] - this.target[0], this.eye[1] - this.target[1], this.eye[2] - this.target[2]));
+    gl.uniform1f(uniforms.uDof, this.settings.quality === 'high' && this.camera !== 'top' ? CONFIG.render.depthOfField : 0);
+    gl.uniform1f(uniforms.uSpeed, !this.settings.reducedMotion && session.boosting && state === 'Playing' ? CONFIG.render.radialBlur : 0);
+    gl.uniform1f(uniforms.uBloomStrength, CONFIG.render.bloomStrength); gl.uniform1f(uniforms.uTime, this.time);
+    gl.uniform1f(uniforms.uImpact, this.settings.reducedMotion ? 0 : this.impact); gl.uniform1f(uniforms.uExposure, CONFIG.render.exposure);
+    gl.drawArrays(gl.TRIANGLES, 0, 3); gl.bindVertexArray(null);
+  }
+  dispose() {
+    this.abort.abort(); this.resizeObserver.disconnect(); this.unsubscribers.forEach((unsubscribe) => unsubscribe()); this.particles.clear();
+    this.disposeTargets();
+    for (const [kind, resource] of this.resources) this.gl[`delete${kind}`](resource);
+    this.resources.length = 0; this.gl.getExtension('WEBGL_lose_context')?.loseContext();
+  }
+}
+
+// ─── audio/AudioSynthesizer.js ───
+
+const MIDI_FREQUENCY = (note) => 440 * 2 ** ((note - 69) / 12);
+const SEQUENCE = [0, 7, 12, 7, 3, 10, 15, 10, 5, 12, 17, 12, 7, 14, 19, 10];
+
+/** All sound is synthesized locally. No media requests, samples, or audio files. */
+class AudioSynthesizer {
+  constructor(settings) { this.settings = settings; this.voices = new Set(); this.running = false; this.step = 0; this.disposed = false; }
+  async unlock() {
+    if (this.disposed) return;
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    if (!this.context) {
+      this.context = new AudioContextClass();
+      this.master = this.context.createGain(); this.master.gain.value = this.settings.volume;
+      this.compressor = this.context.createDynamicsCompressor(); this.compressor.threshold.value = -16; this.compressor.ratio.value = 5;
+      this.master.connect(this.compressor); this.compressor.connect(this.context.destination);
+      this.musicBus = this.context.createGain(); this.musicBus.gain.value = this.settings.music ? CONFIG.audio.music : 0; this.musicBus.connect(this.master);
+      this.effectsBus = this.context.createGain(); this.effectsBus.gain.value = this.settings.effects ? CONFIG.audio.effects : 0; this.effectsBus.connect(this.master);
+      this.delay = this.context.createDelay(1); this.delay.delayTime.value = 60 / CONFIG.audio.tempo * 0.75;
+      this.feedback = this.context.createGain(); this.feedback.gain.value = 0.25;
+      this.wet = this.context.createGain(); this.wet.gain.value = 0.23;
+      this.delay.connect(this.feedback); this.feedback.connect(this.delay); this.delay.connect(this.wet); this.wet.connect(this.musicBus);
+      this.noiseBuffer = this.context.createBuffer(1, this.context.sampleRate, this.context.sampleRate);
+      const data = this.noiseBuffer.getChannelData(0);
+      for (let index = 0; index < data.length; index++) data[index] = Math.random() * 2 - 1;
+      this.nextNote = this.context.currentTime;
+      this.timer = window.setInterval(() => this.schedule(), CONFIG.audio.pollMs);
+    }
+    if (this.context.state === 'suspended') await this.context.resume().catch(() => {});
+  }
+  updateSettings() {
+    if (!this.context) return;
+    const now = this.context.currentTime;
+    this.master.gain.setTargetAtTime(this.settings.volume, now, 0.04);
+    this.musicBus.gain.setTargetAtTime(this.settings.music && this.running ? CONFIG.audio.music : 0, now, 0.12);
+    this.effectsBus.gain.setTargetAtTime(this.settings.effects ? CONFIG.audio.effects : 0, now, 0.04);
+  }
+  setRunning(running) {
+    this.running = running;
+    if (this.context) { this.nextNote = this.context.currentTime + 0.04; this.updateSettings(); }
+  }
+  tone(frequency, start, duration, volume, type = 'sine', bus = this.effectsBus, glide = 1) {
+    if (!this.context || this.voices.size >= CONFIG.audio.maxVoices) return;
+    const oscillator = this.context.createOscillator(), envelope = this.context.createGain();
+    oscillator.type = type; oscillator.frequency.setValueAtTime(frequency, start);
+    oscillator.frequency.exponentialRampToValueAtTime(Math.max(20, frequency * glide), start + duration);
+    envelope.gain.setValueAtTime(0, start); envelope.gain.linearRampToValueAtTime(volume, start + Math.min(0.018, duration * 0.1));
+    envelope.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+    oscillator.connect(envelope); envelope.connect(bus);
+    if (bus === this.musicBus) envelope.connect(this.delay);
+    this.voices.add(oscillator);
+    oscillator.onended = () => { oscillator.disconnect(); envelope.disconnect(); this.voices.delete(oscillator); };
+    oscillator.start(start); oscillator.stop(start + duration + 0.02);
+  }
+  noise(start, duration, volume, cutoff = 4000) {
+    if (!this.context || this.voices.size >= CONFIG.audio.maxVoices) return;
+    const source = this.context.createBufferSource(), filter = this.context.createBiquadFilter(), envelope = this.context.createGain();
+    source.buffer = this.noiseBuffer; filter.type = 'highpass'; filter.frequency.value = cutoff;
+    envelope.gain.setValueAtTime(volume, start); envelope.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+    source.connect(filter); filter.connect(envelope); envelope.connect(this.effectsBus); this.voices.add(source);
+    source.onended = () => { source.disconnect(); filter.disconnect(); envelope.disconnect(); this.voices.delete(source); };
+    source.start(start); source.stop(start + duration);
+  }
+  schedule() {
+    if (!this.context || this.context.state !== 'running') return;
+    if (!this.running || !this.settings.music) { this.nextNote = this.context.currentTime; return; }
+    if (this.nextNote < this.context.currentTime - CONFIG.audio.lookahead) this.nextNote = this.context.currentTime;
+    while (this.nextNote < this.context.currentTime + CONFIG.audio.lookahead) {
+      const beat = this.step % SEQUENCE.length;
+      this.tone(MIDI_FREQUENCY(48 + SEQUENCE[beat]), this.nextNote, 0.34, 0.1, 'triangle', this.musicBus);
+      if (beat % 4 === 0) {
+        this.tone(MIDI_FREQUENCY(36 + (beat < 8 ? 0 : 5)), this.nextNote, 0.5, 0.22, 'sine', this.musicBus);
+        this.tone(110, this.nextNote, 0.16, 0.18, 'sine', this.musicBus, 0.3);
+      }
+      this.step++; this.nextNote += 60 / CONFIG.audio.tempo / 4;
+    }
+  }
+  effect(name, detail = {}) {
+    if (!this.context || this.context.state !== 'running' || !this.settings.effects) return;
+    const time = this.context.currentTime;
+    if (name === 'food') {
+      for (let index = 0; index < 3; index++) this.tone(MIDI_FREQUENCY(69 + index * 5 + Math.min(detail.combo ?? 1, 5)), time + index * 0.045, 0.23, 0.15, 'sine');
+    } else if (name === 'death') {
+      this.tone(150, time, 0.7, 0.35, 'sawtooth', this.effectsBus, 0.18); this.noise(time, 0.45, 0.22, 700);
+    } else if (name === 'start') {
+      [48, 55, 60, 67].forEach((note, index) => this.tone(MIDI_FREQUENCY(note), time + index * 0.09, 0.35, 0.15, 'triangle'));
+    } else if (name === 'portal') this.tone(240, time, 0.35, 0.2, 'sine', this.effectsBus, 4);
+    else if (name === 'mutator') { this.tone(330, time, 0.16, 0.08, 'triangle'); this.tone(440, time + 0.18, 0.16, 0.08, 'triangle'); }
+    else if (name === 'ui') this.tone(680, time, 0.055, 0.04, 'sine');
+  }
+  async dispose() {
+    this.disposed = true; clearInterval(this.timer);
+    for (const voice of this.voices) { try { voice.stop(); } catch { /* Already stopped. */ } voice.disconnect(); }
+    this.voices.clear();
+    for (const node of [this.master, this.compressor, this.musicBus, this.effectsBus, this.delay, this.feedback, this.wet]) node?.disconnect();
+    if (this.context && this.context.state !== 'closed') await this.context.close();
+  }
+}
+
+// ─── input/InputEngine.js ───
+const KEY_DIRECTIONS = Object.freeze({ ArrowUp: 'up', KeyW: 'up', KeyZ: 'up', ArrowRight: 'right', KeyD: 'right', ArrowDown: 'down', KeyS: 'down', ArrowLeft: 'left', KeyA: 'left', KeyQ: 'left' });
+
+class InputEngine {
+  constructor(canvas, events, state) {
+    this.events = events; this.state = state; this.abort = new AbortController();
+    this.pointerStart = null; this.gamepadPrevious = {}; this.activeBoostSources = new Set();
+    const options = { signal: this.abort.signal };
+    window.addEventListener('keydown', (event) => this.keydown(event), options);
+    window.addEventListener('keyup', (event) => { if (event.code === 'Space' || event.code === 'ShiftLeft' || event.code === 'ShiftRight') this.boost('keyboard', false); }, options);
+    window.addEventListener('blur', () => { this.release(); events.emit('autopause'); }, options);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) { this.release(); events.emit('autopause'); } }, options);
+    canvas.addEventListener('pointerdown', (event) => { canvas.setPointerCapture(event.pointerId); this.pointerStart = { x: event.clientX, y: event.clientY }; events.emit('unlockaudio'); }, options);
+    canvas.addEventListener('pointermove', (event) => {
+      if (!this.pointerStart || !this.state.is('Playing')) return;
+      const x = event.clientX - this.pointerStart.x, y = event.clientY - this.pointerStart.y;
+      if (Math.hypot(x, y) < 22) return;
+      this.events.emit('direction', Math.abs(x) > Math.abs(y) ? x > 0 ? 'right' : 'left' : y > 0 ? 'down' : 'up');
+      this.pointerStart = { x: event.clientX, y: event.clientY };
+    }, options);
+    const releasePointer = () => { this.pointerStart = null; };
+    canvas.addEventListener('pointerup', releasePointer, options); canvas.addEventListener('pointercancel', releasePointer, options);
+    document.querySelectorAll('[data-direction]').forEach((button) => button.addEventListener('pointerdown', (event) => { event.preventDefault(); events.emit('direction', button.dataset.direction); }, options));
+    document.querySelectorAll('[data-boost]').forEach((button) => {
+      button.addEventListener('pointerdown', (event) => { event.preventDefault(); button.setPointerCapture(event.pointerId); this.boost('touch', true); }, options);
+      for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) button.addEventListener(type, () => this.boost('touch', false), options);
+    });
+  }
+  keydown(event) {
+    if (event.ctrlKey || event.metaKey || event.altKey || document.querySelector('dialog[open]')) return;
+    if (['INPUT', 'SELECT', 'TEXTAREA'].includes(event.target.tagName)) return;
+    if (KEY_DIRECTIONS[event.code] && this.state.is('Playing')) {
+      event.preventDefault(); if (!event.repeat) this.events.emit('direction', KEY_DIRECTIONS[event.code]); return;
+    }
+    if ((event.code === 'Space' || event.code.startsWith('Shift')) && this.state.is('Playing')) { event.preventDefault(); this.boost('keyboard', true); return; }
+    if (event.repeat) return;
+    if (event.code === 'Escape' || event.code === 'KeyP') { event.preventDefault(); this.events.emit('pause'); }
+    else if (event.code === 'KeyC') this.events.emit('camera');
+    else if (event.code === 'KeyM') this.events.emit('mute');
+    else if (event.code === 'KeyR' && this.state.is('GameOver')) this.events.emit('start');
+    else if (event.code === 'Enter' && !event.target.closest('button') && (this.state.is('Menu') || this.state.is('GameOver'))) this.events.emit('start');
+  }
+  boost(source, enabled) {
+    if (enabled) this.activeBoostSources.add(source); else this.activeBoostSources.delete(source);
+    this.events.emit('boost', this.activeBoostSources.size > 0);
+  }
+  release() { this.activeBoostSources.clear(); this.pointerStart = null; this.events.emit('boost', false); }
+  pollGamepad() {
+    if (document.querySelector('dialog[open]')) return;
+    const gamepad = navigator.getGamepads?.()?.[0];
+    if (!gamepad) { if (this.activeBoostSources.has('gamepad')) this.boost('gamepad', false); this.gamepadPrevious = {}; return; }
+    const pressed = {
+      up: gamepad.buttons[12]?.pressed || gamepad.axes[1] < -0.55,
+      down: gamepad.buttons[13]?.pressed || gamepad.axes[1] > 0.55,
+      left: gamepad.buttons[14]?.pressed || gamepad.axes[0] < -0.55,
+      right: gamepad.buttons[15]?.pressed || gamepad.axes[0] > 0.55,
+      pause: gamepad.buttons[9]?.pressed, camera: gamepad.buttons[3]?.pressed, start: gamepad.buttons[0]?.pressed,
+    };
+    for (const direction of ['up', 'down', 'left', 'right']) if (pressed[direction] && !this.gamepadPrevious[direction] && this.state.is('Playing')) this.events.emit('direction', direction);
+    if (pressed.pause && !this.gamepadPrevious.pause) this.events.emit('pause');
+    if (pressed.camera && !this.gamepadPrevious.camera) this.events.emit('camera');
+    if (pressed.start && !this.gamepadPrevious.start && (this.state.is('Menu') || this.state.is('GameOver'))) this.events.emit('start');
+    this.boost('gamepad', Boolean(gamepad.buttons[0]?.pressed && this.state.is('Playing')));
+    this.gamepadPrevious = pressed;
+  }
+  dispose() { this.abort.abort(); this.release(); }
+}
+
+// ─── ui/UserInterface.js ───
+
+const $ = (selector) => document.querySelector(selector);
+const scoreText = (value) => String(value).padStart(4, '0');
+const durationText = (seconds) => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(Math.floor(seconds % 60)).padStart(2, '0')}`;
+const DEATH_MESSAGES = Object.freeze({ wall: 'La frontière a eu le dernier mot.', self: 'Votre trace vous a rattrapé.', obstacle: 'L’arène a changé. Revenez plus fort.', complete: 'Chaque case est à vous. Protocole accompli.' });
+
+class UserInterface {
+  constructor(events, state, session, storage) {
+    this.events = events; this.state = state; this.session = session; this.storage = storage;
+    this.abort = new AbortController(); this.lastValues = new Map(); this.previousVolume = CONFIG.audio.master; this.lastCountdown = '';
+    this.elements = {};
+    this.miniMap = $('#mini-map canvas').getContext('2d');
+    for (const id of ['score', 'foods', 'elapsed', 'combo', 'energy-value', 'energy-fill', 'countdown', 'live-info', 'fps', 'toast', 'score-popup']) this.elements[id] = document.getElementById(id);
+    const options = { signal: this.abort.signal };
+    document.querySelectorAll('[data-action]').forEach((button) => button.addEventListener('click', () => {
+      events.emit('unlockaudio'); const action = button.dataset.action;
+      if (action === 'settings' || action === 'help') this.openDialog(action);
+      else if (action === 'sound') events.emit('mute');
+      else if (action === 'fullscreen') this.fullscreen();
+      else events.emit(action);
+      events.emit('uisound');
+    }, options));
+    document.querySelectorAll('[data-mode]').forEach((button) => button.addEventListener('click', () => events.emit('mode', button.dataset.mode), options));
+    document.querySelectorAll('[data-camera]').forEach((button) => button.addEventListener('click', () => events.emit('camera', button.dataset.camera), options));
+    document.querySelectorAll('[data-close]').forEach((button) => button.addEventListener('click', () => button.closest('dialog').close(), options));
+    document.querySelectorAll('dialog').forEach((dialog) => {
+      dialog.addEventListener('click', (event) => {
+        const bounds = dialog.getBoundingClientRect();
+        if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
+      }, options);
+    });
+    for (const key of ['volume', 'music', 'effects', 'quality', 'reducedMotion']) {
+      const input = document.getElementById(key);
+      input.addEventListener(key === 'volume' ? 'input' : 'change', () => {
+        const value = key === 'volume' ? Number(input.value) / 100 : input.type === 'checkbox' ? input.checked : input.value;
+        storage.settings({ [key]: value }); this.syncSettings(); events.emit('settings', { key, value });
+      }, options);
+    }
+    this.unsubscribers = [
+      events.on('state', () => this.syncState()),
+      events.on('food', (event) => {
+        const popup = this.elements['score-popup']; popup.textContent = `+${event.points}`; popup.classList.remove('pop');
+        // A forced style flush restarts the one-shot reward animation without a timer.
+        void popup.offsetWidth; popup.classList.add('pop'); this.update();
+      }),
+      events.on('mutator', ({ text }) => this.toast(text)),
+      events.on('death', ({ reason }) => { this.deathReason = reason; }),
+    ];
+    this.syncSettings(); this.syncMode(); this.syncCamera(storage.data.settings.camera);
+  }
+  text(id, value) {
+    if (this.lastValues.get(id) === value) return;
+    this.lastValues.set(id, value); (this.elements[id] ?? document.getElementById(id)).textContent = value;
+  }
+  syncState() {
+    const state = this.state.current;
+    document.body.dataset.state = state;
+    const menu = state === 'Menu' || state === 'Boot';
+    $('#menu-content').hidden = !menu; $('#session-content').hidden = menu;
+    $('#arena-caption').hidden = !menu;
+    $('#state-overlay').hidden = state !== 'Paused' && state !== 'GameOver';
+    $('#arena-status').textContent = menu ? 'DÉMO EN TEMPS RÉEL' : state === 'Paused' ? 'SIGNAL EN PAUSE' : state === 'GameOver' ? 'SESSION TERMINÉE' : 'CONNEXION ACTIVE';
+    if (state === 'Paused' || state === 'GameOver') {
+      const over = state === 'GameOver';
+      $('#overlay-eyebrow').textContent = over ? this.session.won ? 'PROTOCOLE ACCOMPLI' : 'SIGNAL PERDU' : 'SIGNAL SUSPENDU';
+      $('#overlay-title').textContent = over ? this.session.won ? 'Arène maîtrisée.' : 'Encore une fois.' : 'On reprend ?';
+      $('#overlay-message').textContent = over ? DEATH_MESSAGES[this.deathReason] ?? 'Une nouvelle trajectoire vous attend.' : 'Votre progression est conservée. Prenez votre temps.';
+      $('#result-stats').hidden = !over; $('#new-record').hidden = !over || !this.session.newRecord;
+      $('#final-score').textContent = scoreText(this.session.score); $('#final-best').textContent = scoreText(this.storage.best(this.session.mode));
+      const button = $('#overlay-primary'); button.dataset.action = over ? 'start' : 'resume';
+      button.innerHTML = `${over ? 'Rejouer' : 'Reprendre'} <svg><use href="#i-arrow"/></svg>`;
+      button.focus({ preventScroll: true });
+    }
+    if (state === 'Playing') $('#game-canvas').focus({ preventScroll: true });
+    if (state === 'Menu') {
+      this.elements.toast.hidden = true; this.elements['score-popup'].classList.remove('pop');
+      this.syncMode();
+    }
+    this.syncCamera(this.storage.data.settings.camera);
+    this.update();
+  }
+  syncMode() {
+    const mode = CONFIG.modes[this.session.mode];
+    document.querySelectorAll('[data-mode]').forEach((button) => {
+      const selected = button.dataset.mode === this.session.mode; button.classList.toggle('selected', selected); button.setAttribute('aria-pressed', String(selected));
+    });
+    $('#menu-best').textContent = scoreText(this.storage.best(this.session.mode));
+    $('#session-best').textContent = scoreText(this.storage.best(this.session.mode));
+    $('#session-mode').textContent = mode.name; $('#session-code').textContent = mode.code;
+    $('#session-description').textContent = mode.description;
+  }
+  syncCamera(camera) {
+    $('#mini-map').hidden = camera !== 'chase' || this.state.is('Menu') || this.state.is('Boot');
+    document.querySelectorAll('[data-camera]').forEach((button) => { const active = button.dataset.camera === camera; button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active)); });
+    $('#direction-hint').textContent = camera === 'chase' ? '← → TOURNER' : 'SE DIRIGER';
+  }
+  syncSettings() {
+    const settings = this.storage.data.settings;
+    for (const key of ['music', 'effects', 'reducedMotion']) document.getElementById(key).checked = settings[key];
+    $('#volume').value = String(Math.round(settings.volume * 100)); $('#volume-output').value = `${Math.round(settings.volume * 100)}%`;
+    $('#quality').value = settings.quality;
+    const muteButton = $('[data-action=sound]'); muteButton.setAttribute('aria-pressed', String(settings.volume === 0));
+    muteButton.setAttribute('aria-label', settings.volume === 0 ? 'Activer le son' : 'Couper le son');
+    document.body.classList.toggle('reduced-motion', settings.reducedMotion);
+  }
+  toggleMute() {
+    const volume = this.storage.data.settings.volume;
+    if (volume > 0) this.previousVolume = volume;
+    this.storage.settings({ volume: volume > 0 ? 0 : this.previousVolume }); this.syncSettings();
+  }
+  openDialog(type) {
+    if (this.state.is('Playing')) this.events.emit('pause');
+    document.getElementById(`${type}-dialog`).showModal();
+  }
+  async fullscreen() {
+    try {
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else if ($('.arena').requestFullscreen) await $('.arena').requestFullscreen();
+      else this.toast('PLEIN ÉCRAN NON DISPONIBLE SUR CE NAVIGATEUR');
+    } catch { this.toast('LE NAVIGATEUR A REFUSÉ LE PLEIN ÉCRAN'); }
+  }
+  toast(message) {
+    this.elements.toast.textContent = message; this.elements.toast.hidden = false;
+    clearTimeout(this.toastTimer); this.toastTimer = setTimeout(() => { this.elements.toast.hidden = true; }, CONFIG.ui.toastDuration);
+  }
+  update() {
+    const session = this.session;
+    this.text('score', scoreText(session.score)); this.text('foods', String(session.foods).padStart(2, '0')); this.text('elapsed', durationText(session.elapsed));
+    this.text('combo', `MULTIPLICATEUR ×${session.combo}${session.boosting ? ' · BOOST ×2' : ''}`);
+    const energy = Math.round(session.energy * 100); this.text('energy-value', `${energy}%`);
+    this.elements['energy-fill'].style.transform = `scaleX(${session.energy})`;
+    this.elements['energy-fill'].style.background = energy < 20 ? '#ffc278' : '#81ffd1';
+    this.text('live-info', session.fluxActive ? 'SURCHARGE TEMPORELLE' : session.boosting ? 'BOOST ACTIF' : session.warnings.length ? 'OBSTACLES EN APPROCHE' : 'PROTOCOLE STABLE');
+    const counting = this.state.is('Playing') && session.countdown > 0;
+    this.elements.countdown.hidden = !counting;
+    const count = String(Math.ceil(session.countdown / (CONFIG.gameplay.countdown / 3)));
+    if (counting && this.lastCountdown !== count) { this.elements.countdown.querySelector('strong').textContent = count; this.lastCountdown = count; }
+    if (!$('#mini-map').hidden) this.drawMiniMap();
+  }
+  drawMiniMap() {
+    const ctx = this.miniMap, size = CONFIG.ui.miniMapSize, cell = size / CONFIG.board.size;
+    ctx.clearRect(0, 0, size, size); ctx.fillStyle = '#0b1712'; ctx.fillRect(0, 0, size, size);
+    ctx.strokeStyle = '#243d2e'; ctx.lineWidth = 0.5;
+    for (let index = 0; index <= CONFIG.board.size; index += 4) {
+      ctx.beginPath(); ctx.moveTo(index * cell, 0); ctx.lineTo(index * cell, size); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(0, index * cell); ctx.lineTo(size, index * cell); ctx.stroke();
+    }
+    const draw = (position, color, inset = 0.4) => { ctx.fillStyle = color; ctx.fillRect(position.x * cell + inset, position.z * cell + inset, cell - inset * 2, cell - inset * 2); };
+    this.session.obstacles.forEach((position) => draw(position, '#ff5664'));
+    this.session.warnings.forEach((position) => draw(position, '#873c49'));
+    this.session.portals.forEach((position) => draw(position, '#b9a0ff', 0));
+    this.session.snake.body.forEach((position, index) => draw(position, index ? '#4eaa87' : '#dcffee'));
+    if (this.session.food) draw(this.session.food, '#ffca80', 0);
+  }
+  dispose() { this.abort.abort(); clearTimeout(this.toastTimer); this.unsubscribers.forEach((unsubscribe) => unsubscribe()); }
+}
+
+// ─── main.js ───
+
+class SerpentApplication {
+  constructor() {
+    this.events = new EventBus(); this.storage = new Storage(); this.state = new GameStateManager(this.events);
+    if (!this.storage.data.runs && window.matchMedia('(prefers-reduced-motion: reduce)').matches) this.storage.settings({ reducedMotion: true });
+    this.session = new GameSession(this.events);
+    this.audio = new AudioSynthesizer(this.storage.data.settings);
+    this.canvas = document.getElementById('game-canvas');
+    this.renderer = new RenderPipeline(this.canvas, this.events, this.storage.data.settings);
+    this.input = new InputEngine(this.canvas, this.events, this.state);
+    this.ui = new UserInterface(this.events, this.state, this.session, this.storage);
+    this.physics = new PhysicsEngine((dt) => { if (this.state.is('Playing')) this.session.update(dt); });
+    this.abort = new AbortController(); this.disposed = false;
+    this.lastTime = 0; this.uiClock = 0; this.frameClock = 0; this.frameCount = 0;
+    this.connectEvents(); this.state.transition('Menu');
+    window.addEventListener('pagehide', (event) => { if (event.persisted) this.pause(); else this.dispose(); }, { signal: this.abort.signal });
+    window.addEventListener('pageshow', () => { this.lastTime = 0; }, { signal: this.abort.signal });
+    this.frame = this.frame.bind(this); this.animationId = requestAnimationFrame(this.frame);
+  }
+  connectEvents() {
+    const on = (name, callback) => this.events.on(name, callback);
+    on('start', () => this.start()); on('resume', () => this.resume()); on('pause', () => this.togglePause()); on('autopause', () => this.pause());
+    on('menu', () => {
+      this.input.release(); this.physics.reset();
+      if (!this.state.is('Menu')) this.state.transition('Menu');
+    });
+    on('mode', (mode) => { if (this.state.is('Menu')) { this.session.reset(mode); this.ui.syncMode(); this.audio.effect('ui'); } });
+    on('direction', (direction) => {
+      if (!this.state.is('Playing')) return;
+      if (this.renderer.camera === 'chase') {
+        if (direction === 'left') this.session.snake.turn(-1);
+        else if (direction === 'right') this.session.snake.turn(1);
+      } else this.session.snake.enqueue(direction);
+    });
+    on('boost', (enabled) => { this.session.boostRequested = enabled && this.state.is('Playing'); });
+    on('camera', (camera) => {
+      const current = CONFIG.cameras.findIndex((item) => item.id === this.renderer.camera);
+      const next = camera ?? CONFIG.cameras[(current + 1) % CONFIG.cameras.length].id;
+      if (!CONFIG.cameras.some((item) => item.id === next)) return;
+      this.renderer.setCamera(next); this.storage.settings({ camera: next }); this.ui.syncCamera(next);
+      this.session.snake.queue.length = 0;
+      if (next === 'chase') this.ui.toast('POURSUITE · ← / → POUR TOURNER');
+    });
+    on('mute', () => { this.ui.toggleMute(); this.audio.updateSettings(); });
+    on('unlockaudio', () => { void this.audio.unlock(); }); on('uisound', () => this.audio.effect('ui'));
+    on('settings', ({ key }) => { this.audio.updateSettings(); if (key === 'quality') this.renderer.resize(true); });
+    on('food', (event) => this.audio.effect('food', event));
+    on('portal', () => this.audio.effect('portal')); on('mutator', () => this.audio.effect('mutator'));
+    on('death', (event) => {
+      this.session.newRecord = this.storage.record(this.session.mode, event.score);
+      this.audio.effect(event.won ? 'start' : 'death'); this.input.release(); this.state.transition('GameOver');
+    });
+    on('state', ({ current }) => { this.audio.setRunning(current === 'Playing'); this.physics.reset(); });
+    on('graphicslost', () => { this.pause(); this.ui.toast('CONNEXION GRAPHIQUE INTERROMPUE'); });
+    on('graphicsrestored', () => this.ui.toast('RENDU RESTAURÉ · VOUS POUVEZ REPRENDRE'));
+  }
+  start() {
+    if (!this.state.is('Menu') && !this.state.is('GameOver')) return;
+    this.session.reset(this.session.mode); this.session.newRecord = false;
+    this.renderer.particles.clear(); this.input.release(); this.ui.syncMode();
+    this.state.transition('Playing'); this.lastTime = 0;
+    void this.audio.unlock().then(() => { this.audio.setRunning(this.state.is('Playing')); if (this.state.is('Playing')) this.audio.effect('start'); });
+  }
+  pause() { if (this.state.is('Playing')) { this.input.release(); this.state.transition('Paused'); } }
+  resume() { if (this.state.is('Paused') && !this.renderer.lost) { this.input.release(); this.lastTime = 0; this.state.transition('Playing'); } }
+  togglePause() { if (this.state.is('Playing')) this.pause(); else if (this.state.is('Paused')) this.resume(); }
+  frame(timestamp) {
+    if (this.disposed) return;
+    const dt = this.lastTime ? Math.min((timestamp - this.lastTime) / 1000, CONFIG.simulation.maxFrameDelta) : 0;
+    this.lastTime = timestamp;
+    if (!document.hidden) {
+      this.input.pollGamepad();
+      if (this.state.is('Playing')) this.physics.advance(dt);
+      this.renderer.render(dt, this.session, this.state.current);
+      this.uiClock += dt; this.frameClock += dt; this.frameCount++;
+      if (this.uiClock >= CONFIG.ui.refreshInterval) { this.ui.update(); this.uiClock = 0; }
+      if (this.frameClock >= CONFIG.render.frameSample) {
+        this.ui.text('fps', String(Math.round(this.frameCount / this.frameClock))); this.frameClock = 0; this.frameCount = 0;
+      }
+    }
+    this.animationId = requestAnimationFrame(this.frame);
+  }
+  async dispose() {
+    if (this.disposed) return;
+    this.disposed = true; cancelAnimationFrame(this.animationId); this.abort.abort();
+    this.input.dispose(); this.ui.dispose(); this.renderer.dispose(); this.events.dispose(); await this.audio.dispose();
+  }
+}
+
+let app;
+try { app = new SerpentApplication(); }
+catch (error) {
+  const panel = document.getElementById('fatal-error'); panel.hidden = false; panel.querySelector('p').textContent = error.message;
+  console.error(error);
+}
+
+window.SERPENT = app;
+
+</script>
+</body>
+</html>
